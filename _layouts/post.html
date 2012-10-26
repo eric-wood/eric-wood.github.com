@@ -1,9 +1,5 @@
----
-layout: default
----
+{% include header.html %}
 
-<div class="post">
-  <h3 class="post-title">{{ post.title }}</h3>
-  <h5 class="post-date">{{ post.date }}</h5>
-  {{ content }}
-</div>
+{% include post.html %}
+
+{% include footer.html %}

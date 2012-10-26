@@ -1,11 +1,50 @@
 ---
 layout: default
-title: asdfasdf
+title: blog
 ---
 
-<ul>
-  {% for post in site.posts %}
-    <li>{{ post.date }} - <a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+{% for post in paginator.posts %}
+  <div class="post">
+    <a href="{{ post.url }}"><h3 class="post-title">{{ post.title }}</h3></a>
+    <h5 class="post-date">{{ post.date | date: "%B %d, %Y" }}</h5>
+    <div class="post-content">
+      {{ post | only_first_p }}
+    </div>
+  </div>
+{% endfor %}
 
+<div class="pagination">
+  <ul>
+    {% if paginator.previous_page %}
+      <li>
+        {% if paginator.previous_page == 1 %}
+          <a href="/">Prev</a>
+        {% else %}
+          <a href="/page{{paginator.previous_page}}">Prev</a>
+        {% endif %}
+      </li>
+    {% else %}
+      <!--<li>Prev</li>-->
+    {% endif %}
+
+      {% if paginator.page == 1 %}
+        <li class="current">1</li>
+      {% else %}
+        <li><a href="/">1</a></li>
+      {% endif %}
+
+      {% for count in (2..paginator.total_pages) %}
+        {% if count == paginator.page %}
+          <li class="current">{{count}}</li>
+        {% else %}
+          <li><a href="/page{{count}}">{{count}}</a></li>
+        {% endif %}
+      {% endfor %}
+
+    {% if paginator.next_page %}
+      <li><a href="/page{{paginator.next_page}}">Next</a></li>
+    {% else %}
+      <!--<li>Next</li>-->
+    {% endif %}
+  </ul>
+</div>
