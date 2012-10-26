@@ -9,9 +9,11 @@ module Jekyll
     }
     
     def only_first_p(post)       
-      output = "<p>"
-      output << Nokogiri::HTML(post["content"]).at_css("p").inner_html
-      output << %{</p>}
+      #output = "<p>"
+      #output << Nokogiri::HTML(post["content"]).at_css("p").inner_html
+      # modified slightly to show more than one paragraph
+      output = Nokogiri::HTML(post["content"]).css("p").first(3).reduce('') { |a,i| a += i.to_s }
+      #output << %{</p>}
       
       if only_first_p_config()['show_read_more_link']
         output << %{<a class="readmore" href="#{post["url"]}">}        

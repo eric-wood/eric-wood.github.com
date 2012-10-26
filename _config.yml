@@ -4,7 +4,7 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
 pygments: true
 
-paginate: 1
+paginate: 5
 
 # Only First Paragraph plugin
 only_first_p:
