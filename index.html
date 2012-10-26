@@ -8,7 +8,7 @@ title: blog
     <a href="{{ post.url }}"><h3 class="post-title">{{ post.title }}</h3></a>
     <h5 class="post-date">{{ post.date | date: "%B %d, %Y" }}</h5>
     <div class="post-content">
-      {{ post | only_first_p }}
+      {{ post.content }}
     </div>
   </div>
 {% endfor %}
