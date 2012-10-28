@@ -87,6 +87,11 @@ body {
   text-decoration: underline;
 }
 
+.post {
+  margin-top: 30px;
+  border-bottom: solid #CCC 1px;
+}
+
 .post-title {
   margin: 10px 0;
   padding: 5px 15px;
@@ -110,12 +115,14 @@ body {
 
 .post-content h3 {
   margin-left: -10px;
-  border-bottom: solid rgb(34,34,34) 1px;
+  /*border-bottom: solid rgb(34,34,34) 1px;*/
+  border-bottom: solid #CCC 1px;
   font-weight: bold;
 }
 
 .post-content img {
   display: block;
+  max-width: 620px;
   margin: 0 auto;
   padding: 5px;
   border: solid #CCC 1px;
