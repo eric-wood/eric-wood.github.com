@@ -141,6 +141,12 @@ body {
   border: 0;
 }
 
+.post-content img.me {
+  display: inline;
+  float: right;
+  width: 150px;
+}
+
 .post-content pre {
   background: #EEE;
   border-radius: 16px;

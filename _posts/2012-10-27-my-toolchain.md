@@ -60,6 +60,8 @@ Like many \*nix users, I spend a lot of my time in the terminal. Since I'm mostl
 
 I use the [tomorrow-night-eighties](https://github.com/chriskempson/tomorrow-theme) iTerm2 colorscheme to match my Vim colorscheme.
 
+Although it doesn't happen as often anymore, when I find myself working remotely I like to use tmux. Right now I have it set up fairly similar to screen, since it feels more natural that way and there's less confusion when I'm forced to use screen instead.
+
 #### Zsh
 
 Recently I made the switch from bash to zsh. The reason? I had heard that zsh a Vi mode that *doesn't* suck. I tried using Vi mode with bash for a while, but there was no way to figure out what state I was in. Zsh, however, lets you change the prompt accordingly.
@@ -75,4 +77,9 @@ The important parts:
 * Branch name changes from green to red when there are uncommitted changes
 * The red bar on the right helps me find my place when reading through scrollback
 
+### Other stuff
 
+These don't really need their own categories, but they definitely deserve some recognition:
+* [Alfred](http://alfredapp.com) - very extensible launcher / everything utility. Love it.
+* [Chrome](http://chrome.google.com) - the most advanced browser available. Web Inspector and I get along well.
+* [Pianobar](http://6xq.net/projects/pianobar/) - open source CLI Pandora client. Shameless plug: I've got a [script](https://github.com/eric-wood/pianobar-growl) for Growl notifications with it. You should check it out.
