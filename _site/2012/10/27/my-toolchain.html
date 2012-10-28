@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>ericwood.org - My Toolchain</title>
+    <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link href='/static/css/default.css' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="everything">
+      <div class="header">
+        <h1 class="title"><a href="/">ericwood.org</a></h1>
+
+        <ul class="links">
+          
+            <li><a href="/">Blog</a></li>
+          
+          
+            <li><a href="/about.html">About Me</a></li>
+          
+          <li><a href="http://github.com/eric-wood">Github</a></li>
+          <li><a href="http://www.linkedin.com/in/ericwoodtx">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <div class="content">
+
+
+
+<div class="post">
+  <h3 class="post-title">My Toolchain</h3>
+  <h5 class="post-date">October 27, 2012</h5>
+  <div class="post-content">
+    <p>I run into quite a few articles on people&#8217;s blogs about the tools they use at their jobs. To me, it&#8217;s fascinating, since everyone takes a different approach, and more often than not I&#8217;ll walk away knowing about some new tool or trick that makes my life easier. I&#8217;ve always wanted to write one of these posts myself.</p>
+
+<p>Over the years, I&#8217;ve put waaaaaaay too much time into my development environment. I justify the lost time by saying something along the lines of &#8220;if I&#8217;m going to be staring at it all day, it had better look nice, damnit,&#8221; or I pretend I hadn&#8217;t just spent the last hour tweaking my .vimrc to fix some minor annoyance rather than getting work done.</p>
+
+<h3 id='config_files'>Config Files</h3>
+
+<p>I like to keep all of my config files in a <a href='http://github.com/eric-wood/dotfiles'>Github repo</a> for easy access. From any machine with git installed, I can simply clone the repository and run bootstrap.sh to have everything set up for me. The bootstrapping script backs up any duplicate dotfiles, and symlinks mine into my homedir.</p>
+
+<p>My bash_profile and zshrc files, however, stay put and instead a line is appended to the beginning of the existing bash_profile or zshrc files to source the ones in the repo. This allows me to have system-specific settings in the file in my homedir along with my other customizations. Modularity is the name of the game!</p>
+
+<h3 id='vim'>Vim</h3>
+
+<p>Vim is awesome. After using it for a few years, I don&#8217;t think I can go back to other editors (unless they have a Vi mode, of course). I could probably do a separate blog post on my vimrc, but that&#8217;s not really necessary yet. You can take a peek at it <a href='https://github.com/eric-wood/dotfiles/blob/master/.vimrc'>here</a> if you&#8217;d like to get into the details, but I&#8217;ll give a brief overview of my customizations.</p>
+
+<p>Before anything else, though, here&#8217;s a bitchin screenshot of my config in action:</p>
+<a href='/static/toolchain/images/vim_demo.png'><img src='/static/images/toolchain/vim_demo.png' /></a>
+<h4 id='colorschemes'>Colorschemes</h4>
+
+<p>My tastes in colorschemes changes pretty often, so here&#8217;s a few of my favorites:</p>
+
+<ul>
+<li><a href='https://github.com/chriskempson/tomorrow-theme'>tomorrow-night-eighties</a> - my current fave</li>
+
+<li><a href='http://ethanschoonover.com/solarized'>Solarized</a> - I have a keybinding to switch to the light version when I&#8217;m in the sun or have the brightness down</li>
+
+<li><a href='http://www.vim.org/scripts/script.php?script_id=2175'>Railscasts</a> - an old favorite, I come back to it from time to time</li>
+
+<li><a href='https://github.com/tomasr/molokai'>Molokai</a> - also pretty neat</li>
+</ul>
+
+<h4 id='plugins'>Plugins</h4>
+
+<p>First things first, I&#8217;d like to give a shout-out to <a href='https://github.com/gmarik/vundle'>Vundle</a>. It&#8217;s essentially a package manager for Vim plugins; you can search, install, and remove plugins from the comfort of Vim. It handles the messy stuff and makes it effortless to try out new plugins. I cannot recommend it enough.</p>
+
+<p>So here&#8217;s a list of some of my favorite plugins:</p>
+
+<ul>
+<li><a href='https://github.com/nathanaelkane/vim-indent-guides'>Indent Guides</a> - little marks to help keep track of indents</li>
+
+<li><a href='http://projects.mikewest.org/vimroom/'>Vimroom</a> - a Vim imitation of <a href='http://www.hogbaysoftware.com/products/writeroom'>Writeroom</a></li>
+
+<li><a href='http://www.vim.org/scripts/script.php?script_id=3736'>CtrlP</a> - fuzzy searching of buffers, filenames, etc.</li>
+
+<li><a href='http://www.vim.org/scripts/script.php?script_id=1658'>NERDTree</a> - the classic Vim file browser</li>
+</ul>
+
+<h4 id='other_customizations'>Other Customizations</h4>
+
+<p>Everything else you see in my vimrc is just handy little keystrokes (mostly using &#60;leader&#62;) for toggling things.</p>
+
+<p>Like all hardcore Vim users, I&#8217;ve remapped the arrow keys to do nothing. HJKL or die! ;)</p>
+
+<h3 id='zsh'>Zsh</h3>
+
+<p>Recently I made the switch from bash to zsh. The reason? I had heard that zsh a Vi mode that <em>doesn&#8217;t</em> suck. I tried using Vi mode with bash for a while, but there was no way to figure out what state I was in. Zsh, however, lets you change the prompt accordingly.</p>
+
+<p>Here&#8217;s what my prompt looks like normally:</p>
+<a href='/static/images/toolchain/zsh_insert.png'><img src='/static/images/toolchain/zsh_insert.png' /></a>
+<p>Now check this out: if I press ESC to switch to normal mode, the lighting bolt turns blue! Whoa.</p>
+<a href='/static/images/toolchain/zsh_normal.png'><img src='/static/images/toolchain/zsh_normal.png' /></a>
+<p>Awesome, eh? Now here&#8217;s another trick: if I have uncommitted changes in the git repo in the current folder, the branch name changes from green to red:</p>
+<a href='/static/images/toolchain/zsh_changes.png'><img src='/static/images/toolchain/zsh_changes.png' /></a>
+<p>Other than that, I don&#8217;t change much to my shells, with the exception of a few aliases which are very specific to my work.</p>
+  </div>
+</div>
+
+
+          <div class="footer">
+            Copyright Eric Wood 2012 &nbsp;|&nbsp; Hosted <a href="https://github.com/eric-wood/eric-wood.github.com">here</a> by Github
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
