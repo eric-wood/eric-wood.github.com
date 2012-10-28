@@ -33,6 +33,8 @@
   <div class="post-content">
     <p>I run into quite a few articles on people&#8217;s blogs about the tools they use at their jobs. To me, it&#8217;s fascinating, since everyone takes a different approach, and more often than not I&#8217;ll walk away knowing about some new tool or trick that makes my life easier. I&#8217;ve always wanted to write one of these posts myself.</p>
 
+<p>This whole post will probably get updated in the future as I continue tweaking things.</p>
+
 <p>Over the years, I&#8217;ve put waaaaaaay too much time into my development environment. I justify the lost time by saying something along the lines of &#8220;if I&#8217;m going to be staring at it all day, it had better look nice, damnit,&#8221; or I pretend I hadn&#8217;t just spent the last hour tweaking my .vimrc to fix some minor annoyance rather than getting work done.</p>
 
 <h3 id='config_files'>Config Files</h3>
@@ -47,6 +49,8 @@
 
 <p>Before anything else, though, here&#8217;s a bitchin screenshot of my config in action:</p>
 <a href='/static/toolchain/images/vim_demo.png'><img src='/static/images/toolchain/vim_demo.png' /></a>
+<p>Now lets dig into the config a bit&#8230;</p>
+
 <h4 id='colorschemes'>Colorschemes</h4>
 
 <p>My tastes in colorschemes changes pretty often, so here&#8217;s a few of my favorites:</p>
@@ -64,6 +68,10 @@
 <h4 id='plugins'>Plugins</h4>
 
 <p>First things first, I&#8217;d like to give a shout-out to <a href='https://github.com/gmarik/vundle'>Vundle</a>. It&#8217;s essentially a package manager for Vim plugins; you can search, install, and remove plugins from the comfort of Vim. It handles the messy stuff and makes it effortless to try out new plugins. I cannot recommend it enough.</p>
+
+<p>Since I&#8217;m on OS X most of the time, I use <a href='https://github.com/b4winckler/macvim'>MacVim</a> for everything. It&#8217;s wonderful and feels much better than gVim.</p>
+
+<p>Quick note about terminal vs. gVim - when I can get my hands on it, I prefer gVim, <em>however</em> I do everything I can to make my vimrc work equally as well in both. The easiest way to do this is toggling functionality with an if statement. Some people prefer to have a separate gvimrc file with their gVim-specific settings (lame).</p>
 
 <p>So here&#8217;s a list of some of my favorite plugins:</p>
 
@@ -83,17 +91,31 @@
 
 <p>Like all hardcore Vim users, I&#8217;ve remapped the arrow keys to do nothing. HJKL or die! ;)</p>
 
-<h3 id='zsh'>Zsh</h3>
+<h3 id='terminal'>Terminal</h3>
+
+<p>Like many *nix users, I spend a lot of my time in the terminal. Since I&#8217;m mostly using OS X, <a href='http://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;ved=0CB8QFjAA&amp;url=http%3A%2F%2Fwww.iterm2.com%2F&amp;ei=MFaNUPriOsjXqgGM04DYDA&amp;usg=AFQjCNG7IStoNOzSPwdmFLWs4251hvTXvA'>iTerm2</a> is my terminal emulator of choice. It&#8217;s more flexible than Terminal.app, and can do things like splits and a cool FPS-style dropdown window.</p>
+
+<p>I use the <a href='https://github.com/chriskempson/tomorrow-theme'>tomorrow-night-eighties</a> iTerm2 colorscheme to match my Vim colorscheme.</p>
+
+<h4 id='zsh'>Zsh</h4>
 
 <p>Recently I made the switch from bash to zsh. The reason? I had heard that zsh a Vi mode that <em>doesn&#8217;t</em> suck. I tried using Vi mode with bash for a while, but there was no way to figure out what state I was in. Zsh, however, lets you change the prompt accordingly.</p>
 
-<p>Here&#8217;s what my prompt looks like normally:</p>
-<a href='/static/images/toolchain/zsh_insert.png'><img src='/static/images/toolchain/zsh_insert.png' /></a>
-<p>Now check this out: if I press ESC to switch to normal mode, the lighting bolt turns blue! Whoa.</p>
-<a href='/static/images/toolchain/zsh_normal.png'><img src='/static/images/toolchain/zsh_normal.png' /></a>
-<p>Awesome, eh? Now here&#8217;s another trick: if I have uncommitted changes in the git repo in the current folder, the branch name changes from green to red:</p>
-<a href='/static/images/toolchain/zsh_changes.png'><img src='/static/images/toolchain/zsh_changes.png' /></a>
-<p>Other than that, I don&#8217;t change much to my shells, with the exception of a few aliases which are very specific to my work.</p>
+<p>Like all good zsh users, I&#8217;ve tricked out my prompt. Here it is in action:</p>
+<a href='/static/images/toolchain/zsh.png'><img class='no-border' src='/static/images/toolchain/zsh.png' /></a>
+<p>The important parts:</p>
+
+<ul>
+<li>Hostname is in blue</li>
+
+<li>Current Git branch is in the square brackets</li>
+
+<li>The lightning bolt: yellow = insert mode; blue = normal mode (for the Vi stuff)</li>
+
+<li>Branch name changes from green to red when there are uncommitted changes</li>
+
+<li>The red bar on the right helps me find my place when reading through scrollback</li>
+</ul>
   </div>
 </div>
 

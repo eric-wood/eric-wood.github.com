@@ -96,6 +96,7 @@ body {
   margin: 10px 0;
   padding: 5px 15px;
   color: rgb(106, 156, 190);
+  font-size: 18pt;
 }
 
 .post-date {
@@ -116,8 +117,16 @@ body {
 .post-content h3 {
   margin-left: -10px;
   /*border-bottom: solid rgb(34,34,34) 1px;*/
+  color: #000;
   border-bottom: solid #CCC 1px;
   font-weight: bold;
+  font-size: 14pt;
+}
+
+.post-content h4 {
+  font-weight: bold;
+  font-size: 14pt;
+  margin: 0;
 }
 
 .post-content img {
@@ -127,6 +136,11 @@ body {
   padding: 5px;
   border: solid #CCC 1px;
 }
+
+.post-content img.no-border {
+  border: 0;
+}
+
 .post-content pre {
   background: #EEE;
   border-radius: 16px;
