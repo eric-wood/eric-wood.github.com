@@ -147,11 +147,21 @@ body {
   width: 150px;
 }
 
+/*
 .post-content pre {
   background: #EEE;
   border-radius: 16px;
   padding: 15px;
   border: solid #CCC 1px;
+}
+*/
+
+span.pre {
+  font-family: monospace;
+}
+
+.syntaxhighlighter > table {
+  padding-top: 5px !important;
 }
 
 .pagination {
