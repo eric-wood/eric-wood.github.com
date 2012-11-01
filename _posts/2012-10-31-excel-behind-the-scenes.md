@@ -1,6 +1,6 @@
 --- 
 layout: post
-published: false
+published: true
 title: "Excel =&gt; LaTeX : behind the scenes"
 ---
 
@@ -194,8 +194,116 @@ Another thing to keep in mind: all of this file IO is *asynchronous*...you can't
 
 #### Extracting the data
 
-So now we have the text from the XML files. Awesome. 
+So now that we have a buncha XML in the form of strings, we can start the parsing process!
+
+This is pretty simple: we use jQuery's parsing abilities to create a new DOM tree as a jQuery object. From here we can use our favorite jQuery selectors to grab the data.
+
+Here's an example where we build the string table (we do this first so we can substitute the string values when reading in the worksheet itself):
+
+<pre class="brush: js">
+parseStringTable: function(data) {
+  var doc = $(data);
+  var stringTags = doc.find('si');
+  var strings = $.map(stringTags, function(s,i) {
+    return $(s).find('t').text();
+  });
+
+  return strings;
+},
+</pre>
+
+Pretty simple, eh? The string table is just an array; when values refer to strings in the worksheet they simply give us the index into the table.
+
+Now for the main event: reading in the table itself!
+
+<pre class="brush: js">
+processSheet: function(data, stringTable) {
+  // get jQuery object out of the data for accessing stuffs
+  var doc = $(data);
+
+  var table = [];
+
+  var rows = doc.find('sheetdata row');
+  $.each(rows, function(i,row) {
+    var rowNum = parseInt($(row).attr('r'));
+
+    // get columns
+    var cols = $(row).find('c');
+    var colVals = $.map(cols, function(col,j) {
+      var col = $(col);
+      var val = excelParser.latexEscape(col.find('v').text());
+      if(col.attr('t') == 's') {
+        return excelParser.latexEscape(stringTable[parseInt(val)]);
+      } else {
+        return val;
+      }
+    });
+    table[rowNum-1] = colVals;
+  });
+
+  return table;
+},
+</pre>
+
+There's not much going on there; we read in each row, grab the columns, get the data. If it's a string, we look it up in the string table and call <span class="pre">latexEscape()</span>, which escapes symbols with special importance in LaTeX so there's no conflicts in the final output. 
+
+<pre class="brush: js">
+latexEscape: function(text) {
+  var specials = ['\\', '&amp;', '%', '$', '#', '_', '{', '}', '~', '^'];
+  $.each(specials, function(i,special) {
+    text = text.replace(special, '\\' + special);
+  });
+
+  return text;
+},
+</pre>
+
+We've now got the data built up in a 2D array! We can now generate the LaTeX table!
+
+This part was a little messy. I'd prefer not to go into the code, since I'd like to rewrite it in the near future. It's a huge mess and I feel like there's a few bugs in it. But here it is anyways:
+
+<pre class="brush: js">
+toLatex: function(table) {
+  var max = 0;
+  for(var i=0; i &lt; table.length; i++) {
+    if(table[i] &amp;&amp; table[i].length &gt; max) { max = table[i].length; }
+  }
+
+  var numCols = max;
+  var args = [];
+  for(var i=0; i &lt; numCols; i++) {
+    args[i] = 'l';
+  }
+  args = ' | ' + args.join(' | ') + ' | ';
+  var latex = "\\begin{tabular}{" + args + "}\n\\hline\n";
+  for(var i=0; i &lt; table.length; i++) {
+    var cols = table[i];
+    // TODO: replace "&amp;" with "\&amp;"
+    if(cols === undefined) { cols = []; }
+    if(cols.length &lt; numCols) {
+      for(var x=cols.length; x &lt; max; x++) {
+        cols[x] = '\\ ';
+      }
+    }
+
+    latex += "\t" + cols.join(' &amp; ');
+    latex += " \\\\ \\hline\n";
+  }
+
+  latex += "\\end{tabular}\n";
+  
+  $('#latex-output').val(latex);
+},
+</pre>
+
+Tada!
 
 ### Conclusion
 
+This was a fun hack to throw together. It's far from perfect, but it does exactly what I need it to for basic numerical and string data.
+
+There's a few things I'd like to add in the future:
+* Handle formatting,, such as the number of decimal places for numbers
+* Text formatting, such as bold and italics
+* Border styles
 
