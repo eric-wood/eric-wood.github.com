@@ -53,115 +53,14 @@
 
   
   <div class="post">
-    <a href="/2012/10/31/excel-behind-the-scenes.html"><h3 class="post-title">Excel =&gt; LaTeX : behind the scenes</h3></a>
-    <h5 class="post-date">October 31, 2012</h5>
+    <a href="/2012/11/01/coming-soon.html"><h3 class="post-title">Coming soon</h3></a>
+    <h5 class="post-date">November 01, 2012</h5>
     <div class="post-content">
-      <p>The other day I threw <a href='http://ericwood.org/excel2latex'>this</a> together for fun. It&#8217;s a bit of a hack, but there&#8217;s enough going on that it&#8217;s worth writing a little about!</p>
+      <p>So, I wrote <a href='http://ericwood.org/excel2latex'>this</a> neat little thing a few days ago! If you haven&#8217;t tried it, you totally should. It essentially just reads in Excel files and converts tables into LaTeX tables. The cool part? It all happens in your browser!</p>
 
-<p>The premise is simple: I&#8217;m writing a lab report in LaTeX, but most of the data I took was in Excel (what can I say, it&#8217;s not bad for calculations&#8230;don&#8217;t judge me). I want to throw a nice LaTeX table into my report but don&#8217;t want to do everything by hand or save it as a CSV file and use a conversion tool.</p>
+<p>I have a very detailed blog post in the works on how it works. It&#8217;ll cover the basics of the XLSX format Excel uses, as well as the HTML5 file apis I used and how I extracted the data.</p>
 
-<p>That&#8217;s where Excel =&#62; LaTeX comes into play! With the fancy new HTML5 file stuffs it&#8217;s possible to parse XLSX files <em>in the browser</em> without having to run any code server-side! All you have to do is grad an XLSX file into the browser and it spews out a LaTeX table. Howcoolisthat?!</p>
-
-<h3 id='xlsx_and_office_open_xml'>XLSX and Office Open XML</h3>
-
-<p>Before we dive into the implementation, lets talk a bit about the XLSX / <a href='http://en.wikipedia.org/wiki/Office_Open_XML'>Office Open XML</a> formats.</p>
-
-<p>Microsoft is totally down with the open standards thing, yo. They&#8217;re nice enough to go as far as creating an <a href='http://www.ecma-international.org/publications/standards/Ecma-376.htm'>ECMA standard</a> format for all of their Office apps. Granted, the real formats expand quite a bit on OOXML, but even then they publish how those formats work.</p>
-
-<p>For poking around purposes, I created a simple Excel file:</p>
-<img class='no-border' src='/static/images/excel2latex/sample_spreadsheet.png' />
-<p>First things first: XLSX files are zipped, so we need to unzip the file first. Here&#8217;s the contents:</p>
-
-<p><img alt='' src='/static/images/excel2latex/dir.png' /></p>
-
-<p>What&#8217;s going on here? Lots of things.</p>
-
-<p><em>Confession</em>: I didn&#8217;t read the spec. I figured all of this out by poking around the XML files&#8230;so I only understand a very small subset of the format :(</p>
-
-<p>The only directory we care about is <span class='pre'>xl/</span>, where the data lives.</p>
-
-<p>Here are the important files: <ul>
-  <li><span class='pre'>xl/worksheets/sheet1.xml</span> - the data</li>
-  <li><span class='pre'>xl/sharedStrings.xml</span> - table of strings</li>
-</ul></p>
-
-<p>Lets take a look at <span class='pre'>sheet1.xml</span>:</p>
-<pre class='brush: xml'>
-<sheetData>
-    <row r='1' spans='1:2'>
-        <c r='A1' t='s'>
-            <v>4</v>
-        </c>
-        <c r='B1' t='s'>
-            <v>3</v>
-        </c>
-    </row>
-    <row r='2' spans='1:2'>
-        <c r='A2'>
-            <v>1</v>
-        </c>
-        <c r='B2' t='s'>
-            <v>0</v>
-        </c>
-    </row>
-    <row r='3' spans='1:2'>
-        <c r='A3'>
-            <v>2</v>
-        </c>
-        <c r='B3' t='s'>
-            <v>1</v>
-        </c>
-    </row>
-    <row r='4' spans='1:2'>
-        <c r='A4'>
-            <v>3</v>
-        </c>
-        <c r='B4' t='s'>
-            <v>2</v>
-        </c>
-    </row>
-</sheetData>
-</pre>
-<p>It&#8217;s fairly obvious what&#8217;s going on here: <span class='pre'>&lt;row&gt;</span> denotes a row (with the r attribute being the number), <span class='pre'>&lt;c&gt;</span> is a column, and <span class='pre'>&lt;v&gt;</span> is a value.</p>
-
-<p>But wait! Where are our previous letters and strings?! They certainly aren&#8217;t in any of the value tags!</p>
-
-<p>Calm down. They&#8217;re safe and sound in <span class='pre'>sharedStrings.xml</span>.</p>
-
-<p>Columns have a &#8220;t&#8221; attribute which denotes the data type. In the case of strings, we see <span class='pre'>t="s"</span>. This means we&#8217;ll be able to find the string in the string table at the index given to us in the v tag.</p>
-
-<p>So what&#8217;s in <span class='pre'>sharedStrings.xml</span>?</p>
-<pre class='brush: xml'>
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<sst count='5' uniqueCount='5' xmlns='http://schemas.openxmlformats.org/spreadsheetml/2006/main'>
-<si>
-    <t>A</t>
-</si>
-<si>
-    <t>B</t>
-</si>
-<si>
-    <t>C</t>
-</si>
-<si>
-    <t>Letters!</t>
-</si>
-<si>
-    <t>Numbars!</t>
-</si>
-</sst>
-</pre>
-<p>No explanation is really needed here.</p>
-
-<h3 id='the_javascript'>The Javascript</h3>
-
-<h4 id='html5_files_shenanigans'>HTML5, files, shenanigans</h4>
-
-<h4 id='unzipping'>Unzipping</h4>
-
-<h4 id='extracting_the_data'>Extracting the data</h4>
-
-<h3 id='conclusion'>Conclusion</h3>
+<p>Stay tuned!</p>
     </div>
   </div>
 
