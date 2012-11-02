@@ -186,6 +186,10 @@ span.pre {
   color: white;
 }
 
+#disqus_thread {
+  padding: 20px;
+}
+
 .footer {
   color: #A8A8A8;
   padding-top: 10px;
