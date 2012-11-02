@@ -53,6 +53,18 @@
 
   
   <div class="post">
+    <a href="/2012/11/02/new-feature-comments.html"><h3 class="post-title">New Feature Comments</h3></a>
+    <h5 class="post-date">November 02, 2012</h5>
+    <div class="post-content">
+      <p>This just in!</p>
+
+<p>You can now leave comments. All &#60; 100 visitors will now be able to leave comments on blog posts. This is a very exciting development, I know :)</p>
+
+<p>So&#8230;keep it constructive! I&#8217;d love to hear what everyone has to say about things!</p>
+    </div>
+  </div>
+
+  <div class="post">
     <a href="/2012/11/01/excel-behind-the-scenes.html"><h3 class="post-title">Excel =&gt; LaTeX : behind the scenes</h3></a>
     <h5 class="post-date">November 01, 2012</h5>
     <div class="post-content">
@@ -354,112 +366,6 @@ toLatex: function(table) {
 <p>I have a very detailed blog post in the works on how it works. It&#8217;ll cover the basics of the XLSX format Excel uses, as well as the HTML5 file apis I used and how I extracted the data.</p>
 
 <p>Stay tuned!</p>
-    </div>
-  </div>
-
-  <div class="post">
-    <a href="/2012/10/27/my-toolchain.html"><h3 class="post-title">My Toolchain</h3></a>
-    <h5 class="post-date">October 27, 2012</h5>
-    <div class="post-content">
-      <p>I run into quite a few articles on people&#8217;s blogs about the tools they use at their jobs. To me, it&#8217;s fascinating, since everyone takes a different approach, and more often than not I&#8217;ll walk away knowing about some new tool or trick that makes my life easier. I&#8217;ve always wanted to write one of these posts myself.</p>
-
-<p>This whole post will probably get updated in the future as I continue tweaking things.</p>
-
-<p>Over the years, I&#8217;ve put waaaaaaay too much time into my development environment. I justify the lost time by saying something along the lines of &#8220;if I&#8217;m going to be staring at it all day, it had better look nice, damnit,&#8221; or I pretend I hadn&#8217;t just spent the last hour tweaking my .vimrc to fix some minor annoyance rather than getting work done.</p>
-
-<h3 id='config_files'>Config Files</h3>
-
-<p>I like to keep all of my config files in a <a href='http://github.com/eric-wood/dotfiles'>Github repo</a> for easy access. From any machine with git installed, I can simply clone the repository and run bootstrap.sh to have everything set up for me. The bootstrapping script backs up any duplicate dotfiles, and symlinks mine into my homedir.</p>
-
-<p>My bash_profile and zshrc files, however, stay put and instead a line is appended to the beginning of the existing bash_profile or zshrc files to source the ones in the repo. This allows me to have system-specific settings in the file in my homedir along with my other customizations. Modularity is the name of the game!</p>
-
-<h3 id='vim'>Vim</h3>
-
-<p>Vim is awesome. After using it for a few years, I don&#8217;t think I can go back to other editors (unless they have a Vi mode, of course). I could probably do a separate blog post on my vimrc, but that&#8217;s not really necessary yet. You can take a peek at it <a href='https://github.com/eric-wood/dotfiles/blob/master/.vimrc'>here</a> if you&#8217;d like to get into the details, but I&#8217;ll give a brief overview of my customizations.</p>
-
-<p>Before anything else, though, here&#8217;s a bitchin screenshot of my config in action:</p>
-<a href='/static/toolchain/images/vim_demo.png'><img src='/static/images/toolchain/vim_demo.png' /></a>
-<p>Now lets dig into the config a bit&#8230;</p>
-
-<h4 id='colorschemes'>Colorschemes</h4>
-
-<p>My tastes in colorschemes changes pretty often, so here&#8217;s a few of my favorites:</p>
-
-<ul>
-<li><a href='https://github.com/chriskempson/tomorrow-theme'>tomorrow-night-eighties</a> - my current fave</li>
-
-<li><a href='http://ethanschoonover.com/solarized'>Solarized</a> - I have a keybinding to switch to the light version when I&#8217;m in the sun or have the brightness down</li>
-
-<li><a href='http://www.vim.org/scripts/script.php?script_id=2175'>Railscasts</a> - an old favorite, I come back to it from time to time</li>
-
-<li><a href='https://github.com/tomasr/molokai'>Molokai</a> - also pretty neat</li>
-</ul>
-
-<h4 id='plugins'>Plugins</h4>
-
-<p>First things first, I&#8217;d like to give a shout-out to <a href='https://github.com/gmarik/vundle'>Vundle</a>. It&#8217;s essentially a package manager for Vim plugins; you can search, install, and remove plugins from the comfort of Vim. It handles the messy stuff and makes it effortless to try out new plugins. I cannot recommend it enough.</p>
-
-<p>Since I&#8217;m on OS X most of the time, I use <a href='https://github.com/b4winckler/macvim'>MacVim</a> for everything. It&#8217;s wonderful and feels much better than gVim.</p>
-
-<p>Quick note about terminal vs. gVim - when I can get my hands on it, I prefer gVim, <em>however</em> I do everything I can to make my vimrc work equally as well in both. The easiest way to do this is toggling functionality with an if statement. Some people prefer to have a separate gvimrc file with their gVim-specific settings (lame).</p>
-
-<p>So here&#8217;s a list of some of my favorite plugins:</p>
-
-<ul>
-<li><a href='https://github.com/nathanaelkane/vim-indent-guides'>Indent Guides</a> - little marks to help keep track of indents</li>
-
-<li><a href='http://projects.mikewest.org/vimroom/'>Vimroom</a> - a Vim imitation of <a href='http://www.hogbaysoftware.com/products/writeroom'>Writeroom</a></li>
-
-<li><a href='http://www.vim.org/scripts/script.php?script_id=3736'>CtrlP</a> - fuzzy searching of buffers, filenames, etc.</li>
-
-<li><a href='http://www.vim.org/scripts/script.php?script_id=1658'>NERDTree</a> - the classic Vim file browser</li>
-</ul>
-
-<h4 id='other_customizations'>Other Customizations</h4>
-
-<p>Everything else you see in my vimrc is just handy little keystrokes (mostly using &#60;leader&#62;) for toggling things.</p>
-
-<p>Like all hardcore Vim users, I&#8217;ve remapped the arrow keys to do nothing. HJKL or die! ;)</p>
-
-<h3 id='terminal'>Terminal</h3>
-
-<p>Like many *nix users, I spend a lot of my time in the terminal. Since I&#8217;m mostly using OS X, <a href='http://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;ved=0CB8QFjAA&amp;url=http%3A%2F%2Fwww.iterm2.com%2F&amp;ei=MFaNUPriOsjXqgGM04DYDA&amp;usg=AFQjCNG7IStoNOzSPwdmFLWs4251hvTXvA'>iTerm2</a> is my terminal emulator of choice. It&#8217;s more flexible than Terminal.app, and can do things like splits and a cool FPS-style dropdown window.</p>
-
-<p>I use the <a href='https://github.com/chriskempson/tomorrow-theme'>tomorrow-night-eighties</a> iTerm2 colorscheme to match my Vim colorscheme.</p>
-
-<p>Although it doesn&#8217;t happen as often anymore, when I find myself working remotely I like to use tmux. Right now I have it set up fairly similar to screen, since it feels more natural that way and there&#8217;s less confusion when I&#8217;m forced to use screen instead.</p>
-
-<h4 id='zsh'>Zsh</h4>
-
-<p>Recently I made the switch from bash to zsh. The reason? I had heard that zsh a Vi mode that <em>doesn&#8217;t</em> suck. I tried using Vi mode with bash for a while, but there was no way to figure out what state I was in. Zsh, however, lets you change the prompt accordingly.</p>
-
-<p>Like all good zsh users, I&#8217;ve tricked out my prompt. Here it is in action:</p>
-<a href='/static/images/toolchain/zsh.png'><img class='no-border' src='/static/images/toolchain/zsh.png' /></a>
-<p>The important parts:</p>
-
-<ul>
-<li>Hostname is in blue</li>
-
-<li>Current Git branch is in the square brackets</li>
-
-<li>The lightning bolt: yellow = insert mode; blue = normal mode (for the Vi stuff)</li>
-
-<li>Branch name changes from green to red when there are uncommitted changes</li>
-
-<li>The red bar on the right helps me find my place when reading through scrollback</li>
-</ul>
-
-<h3 id='other_stuff'>Other stuff</h3>
-
-<p>These don&#8217;t really need their own categories, but they definitely deserve some recognition:</p>
-
-<ul>
-<li><a href='http://alfredapp.com'>Alfred</a> - very extensible launcher / everything utility. Love it.</li>
-
-<li><a href='http://chrome.google.com'>Chrome</a> - the most advanced browser available. Web Inspector and I get along well.</li>
-
-<li><a href='http://6xq.net/projects/pianobar/'>Pianobar</a> - open source CLI Pandora client. Shameless plug: I&#8217;ve got a <a href='https://github.com/eric-wood/pianobar-growl'>script</a> for Growl notifications with it. You should check it out.</li>
-</ul>
     </div>
   </div>
 
