@@ -22,7 +22,7 @@ For poking around purposes, I created a simple Excel file:
 
 First things first: XLSX files are zipped, so we need to unzip the file first. Here's the contents:
 
-![](/static/images/excel2latex/dir.png)
+[](/static/images/excel2latex/dir.png)
 
 What's going on here? Lots of things.
 
@@ -256,13 +256,13 @@ latexEscape: function(text) {
 
   return text;
 },
-</pre>
+{% endhighlight %}
 
 We've now got the data built up in a 2D array! We can now generate the LaTeX table!
 
 This part was a little messy. I'd prefer not to go into the code, since I'd like to rewrite it in the near future. It's a huge mess and I feel like there's a few bugs in it. But here it is anyways:
 
-<pre class="brush: js">
+{% highlight javascript %}
 toLatex: function(table) {
   var max = 0;
   for(var i=0; i < table.length; i++) {
