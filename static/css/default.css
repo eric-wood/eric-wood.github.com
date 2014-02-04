@@ -128,6 +128,18 @@ img.me {
   padding: 3px;
 }
 
+.highlight {
+  overflow: auto;
+  background: #f8f8f8;
+  border: solid #ddd 1px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.highlight pre {
+  margin: 0;
+}
+
 @media only screen and (max-width: 320px) {
   .header h1 {
     text-align: center;

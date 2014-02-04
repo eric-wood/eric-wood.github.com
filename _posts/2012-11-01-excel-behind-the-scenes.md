@@ -38,7 +38,7 @@ Here are the important files:
 
 Lets take a look at <span class="pre">sheet1.xml</span>:
 
-<pre class="brush: xml">
+{% highlight xml %}
 <sheetData>
     <row r="1" spans="1:2">
         <c r="A1" t="s">
@@ -73,7 +73,7 @@ Lets take a look at <span class="pre">sheet1.xml</span>:
         </c>
     </row>
 </sheetData>
-</pre>
+{% endhighlight %}
 
 It's fairly obvious what's going on here: <span class="pre">&lt;row&gt;</span> denotes a row (with the r attribute being the number), <span class="pre">&lt;c&gt;</span> is a column, and <span class="pre">&lt;v&gt;</span> is a value.
 
@@ -85,7 +85,7 @@ Columns have a "t" attribute which denotes the data type. In the case of strings
 
 So what's in <span class="pre">sharedStrings.xml</span>?
 
-<pre class="brush: xml">
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <sst xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" count="5" uniqueCount="5">
 <si>
@@ -104,7 +104,7 @@ So what's in <span class="pre">sharedStrings.xml</span>?
     <t>Numbars!</t>
 </si>
 </sst>
-</pre>
+{% endhighlight %}
 
 No explanation is really needed here.
 
@@ -118,7 +118,7 @@ The main feature of this is being able to drag files into the browser for conver
 
 Everything is as simple as the <span class="pre">dragover</span> and <span class="pre">drop</span> events. Lets take a look at a sample:
 
-<pre class="brush: js">
+{% highlight javascript %}
 // hack because of jQuery shenanigans
 jQuery.event.props.push('dataTransfer');
 
@@ -129,7 +129,7 @@ $('body').bind('dragover', function(event) {
 });
 
 $('body').bind('drop', excelParser.handleFile);
-</pre>
+{% endhighlight %}
 
 The <span class="pre">dragover</span> event gets triggered when the user starts dragging the file into the browser window. Most websites use this to display some kind of clue to the user that things are happening.
 
@@ -139,7 +139,7 @@ Also note that each event has a call to <span class="pre">stopPropagation()</spa
 
 Now lets take a peek at the event handler:
 
-<pre class="brush: js">
+{% highlight javascript %}
 handleFile: function(event) {
   // prevent default browser behavior
   event.stopPropagation();
@@ -154,7 +154,7 @@ handleFile: function(event) {
   }
   // snip...
 }
-</pre>
+{% endhighlight %}
 
 We can grab the <span class="pre">File</span> objects passed in with the <span class="pre">dataTransfer.files</span> thingamajig. You can find more info on the <span class="pre">File</span> object in the [W3C spec](http://www.w3.org/TR/FileAPI/).
 
@@ -166,7 +166,7 @@ Thankfully, though, someone was one step ahead of me and write [zip.js](http://g
 
 Passing in the binary blob we got in the previous step, it spits out an array of <span class="pre">File</span> objects for us to use.
 
-<pre class="brush: js">
+{% highlight javascript %}
 // unzip and process files
 zip.createReader(new zip.BlobReader(blob), function(reader) {
   reader.getEntries(function(entries) {
@@ -184,7 +184,7 @@ zip.createReader(new zip.BlobReader(blob), function(reader) {
                                                               
   });
 });
-</pre>
+{% endhighlight %}
 
 This is all straight out of the [zip.js documentation](http://gildas-lormeau.github.com/zip.js/core-api.html#zip-reading-example) for the most part. Nothing crazy, we just give a callback for each file that gets read in.
 
@@ -200,7 +200,7 @@ This is pretty simple: we use jQuery's parsing abilities to create a new DOM tre
 
 Here's an example where we build the string table (we do this first so we can substitute the string values when reading in the worksheet itself):
 
-<pre class="brush: js">
+{% highlight javascript %}
 parseStringTable: function(data) {
   var doc = $(data);
   var stringTags = doc.find('si');
@@ -210,13 +210,13 @@ parseStringTable: function(data) {
 
   return strings;
 },
-</pre>
+{% endhighlight %}
 
 Pretty simple, eh? The string table is just an array; when values refer to strings in the worksheet they simply give us the index into the table.
 
 Now for the main event: reading in the table itself!
 
-<pre class="brush: js">
+{% highlight javascript %}
 processSheet: function(data, stringTable) {
   // get jQuery object out of the data for accessing stuffs
   var doc = $(data);
@@ -243,11 +243,11 @@ processSheet: function(data, stringTable) {
 
   return table;
 },
-</pre>
+{% endhighlight %}
 
 There's not much going on there; we read in each row, grab the columns, get the data. If it's a string, we look it up in the string table and call <span class="pre">latexEscape()</span>, which escapes symbols with special importance in LaTeX so there's no conflicts in the final output. 
 
-<pre class="brush: js">
+{% highlight javascript %}
 latexEscape: function(text) {
   var specials = ['\\', '&amp;', '%', '$', '#', '_', '{', '}', '~', '^'];
   $.each(specials, function(i,special) {
@@ -265,23 +265,23 @@ This part was a little messy. I'd prefer not to go into the code, since I'd like
 <pre class="brush: js">
 toLatex: function(table) {
   var max = 0;
-  for(var i=0; i &lt; table.length; i++) {
-    if(table[i] &amp;&amp; table[i].length &gt; max) { max = table[i].length; }
+  for(var i=0; i < table.length; i++) {
+    if(table[i] &amp;&amp; table[i].length > max) { max = table[i].length; }
   }
 
   var numCols = max;
   var args = [];
-  for(var i=0; i &lt; numCols; i++) {
+  for(var i=0; i < numCols; i++) {
     args[i] = 'l';
   }
   args = ' | ' + args.join(' | ') + ' | ';
   var latex = "\\begin{tabular}{" + args + "}\n\\hline\n";
-  for(var i=0; i &lt; table.length; i++) {
+  for(var i=0; i < table.length; i++) {
     var cols = table[i];
     // TODO: replace "&amp;" with "\&amp;"
     if(cols === undefined) { cols = []; }
-    if(cols.length &lt; numCols) {
-      for(var x=cols.length; x &lt; max; x++) {
+    if(cols.length < numCols) {
+      for(var x=cols.length; x < max; x++) {
         cols[x] = '\\ ';
       }
     }
@@ -294,7 +294,7 @@ toLatex: function(table) {
   
   $('#latex-output').val(latex);
 },
-</pre>
+{% endhighlight %}
 
 Tada!
 
