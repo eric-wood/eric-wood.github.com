@@ -303,7 +303,7 @@ Tada!
 This was a fun hack to throw together. It's far from perfect, but it does exactly what I need it to for basic numerical and string data.
 
 There's a few things I'd like to add in the future:
-* Handle formatting,, such as the number of decimal places for numbers
+* Handle formatting, such as the number of decimal places for numbers
 * Text formatting, such as bold and italics
 * Border styles
 
