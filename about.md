@@ -4,12 +4,9 @@ title: About Me
 ---
 
 <img class="me" src="http://gravatar.com/avatar/7bfdbc7b4769c191ee4d09007085ec86?s=150">
-
-<br>
-
 Hello! My name is Eric Wood, and this is my website.
 
-I'm an avid coder, guitarist, biker, dog walker, and many other things. I live in the wonderful city of Austin, Texas.
+I'm an avid coder, guitarist, biker, tennis-er, and many other things, and live in the beautiful city of Austin, TX.
 
 Ever since I wrote my first <span class="pre">&lt;marquee&gt;</span> tag in middle school, I've been hooked on web development and programming in general. I've thoroughly cut my teeth on TI BASIC (although it's no longer on my resume) and the rest is history I guess.
 

@@ -33,7 +33,7 @@ a {
   font-size: 22px;
 }
 
-.nav ul {
+.nav ul.links {
   padding: 0;
   max-width: 700px;
   margin: 0 auto;
@@ -41,21 +41,21 @@ a {
   list-style-type: none;
 }
 
-.nav ul li {
+.nav ul.links li {
   float: left;
   margin-right: 5px;
   padding: 5px 10px;
 }
 
-.nav ul li a {
+.nav ul.links li a {
   box-sizing: border-box;
 }
 
-.nav ul li.current a {
+.nav ul.links li.current a {
   color: #333 !important;
 }
 
-.nav ul li a:hover {
+.nav ul.links li a:hover {
   color: #333;
 }
 
@@ -66,6 +66,7 @@ a {
 }
 
 .post .post-title {
+  margin-top: 10px;
   margin-bottom: 5px;
 }
 
@@ -81,9 +82,11 @@ a {
 .post-content img {
   display: block;
   margin: 0 auto;
+  max-width: 650px;
 }
 
 .pagination {
+  margin-top: 5px;
   text-align: center;
 }
 
@@ -111,9 +114,28 @@ a {
   border-top: double #ccc 3px;
 }
 
+img.me {
+  float: right;
+  margin: 0 5px;
+  border-radius: 100px;
+}
+
+.pre {
+  font-family: monospace;
+  background: #f8f8f8;
+  border: solid #ddd 1px;
+  border-radius: 5px;
+  padding: 3px;
+}
+
 @media only screen and (max-width: 320px) {
   .header h1 {
     text-align: center;
+  }
+
+  img.me {
+    float: none;
+    margin: 0 auto;
   }
 }
 
