@@ -126,6 +126,8 @@ img.me {
   float: right;
   margin: 0 5px;
   border-radius: 100px;
+  border: solid #ccc 1px;
+  padding: 2px;
 }
 
 .pre {
