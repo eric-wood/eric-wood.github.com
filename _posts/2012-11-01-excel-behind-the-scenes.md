@@ -31,10 +31,9 @@ What's going on here? Lots of things.
 The only directory we care about is <span class="pre">xl/</span>, where the data lives.
 
 Here are the important files:
-<ul>
-  <li><span class="pre">xl/worksheets/sheet1.xml</span> - the data</li>
-  <li><span class="pre">xl/sharedStrings.xml</span> - table of strings</li>
-</ul>
+
+* <span class="pre">xl/worksheets/sheet1.xml</span> - the data
+* <span class="pre">xl/sharedStrings.xml</span> - table of strings
 
 Lets take a look at <span class="pre">sheet1.xml</span>:
 
