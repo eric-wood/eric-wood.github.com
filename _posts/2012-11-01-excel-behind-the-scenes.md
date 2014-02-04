@@ -1,7 +1,7 @@
 --- 
 layout: post
 published: true
-title: "Excel =&gt; LaTeX : behind the scenes"
+title: "excel2latex: behind the scenes"
 ---
 
 The other day I threw [this](http://ericwood.org/excel2latex) together for fun. It's a bit of a hack, but there's enough going on that it's worth writing a little about!
