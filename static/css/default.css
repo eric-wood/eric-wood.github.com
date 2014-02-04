@@ -133,6 +133,11 @@ img.me {
     text-align: center;
   }
 
+  .post-content img {
+    max-width: 100%;
+    height: auto;
+  }
+
   img.me {
     float: none;
     margin: 0 auto;
