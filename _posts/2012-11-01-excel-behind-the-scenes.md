@@ -22,7 +22,7 @@ For poking around purposes, I created a simple Excel file:
 
 First things first: XLSX files are zipped, so we need to unzip the file first. Here's the contents:
 
-[](/static/images/excel2latex/dir.png)
+<img src="/static/images/excel2latex/dir.png">
 
 What's going on here? Lots of things.
 
