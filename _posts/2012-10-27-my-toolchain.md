@@ -22,7 +22,7 @@ Vim is awesome. After using it for a few years, I don't think I can go back to o
 
 Before anything else, though, here's a bitchin screenshot of my config in action:
 
-<a href="/static/toolchain/images/vim_demo.png"><img src="/static/images/toolchain/vim_demo.png"></a>
+<a href="/static/toolchain/images/vim_demo.png" target="_blank"><img src="/static/images/toolchain/vim_demo.png"></a>
 
 Now lets dig into the config a bit...
 
@@ -68,7 +68,7 @@ Recently I made the switch from bash to zsh. The reason? I had heard that zsh a 
 
 Like all good zsh users, I've tricked out my prompt. Here it is in action:
 
-<a href="/static/images/toolchain/zsh.png"><img class="no-border" src="/static/images/toolchain/zsh.png"></a>
+<a href="/static/images/toolchain/zsh.png" target="_blank"><img class="no-border" src="/static/images/toolchain/zsh.png"></a>
 
 The important parts:
 * Hostname is in blue

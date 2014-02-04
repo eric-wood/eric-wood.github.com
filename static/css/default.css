@@ -1,205 +1,119 @@
 body {
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
-  font-family: 'Crimson Text', serif;
-  background: #2B2B2B;
-  color: rgb(193,193,193);
-  margin: 0 auto;
 }
 
-.everything {
-  width: 920px;
-  margin: 0 auto;
+a {
+  color: #6995a5;
+  text-decoration: none;
 }
 
 .header {
-  /*position: fixed;*/
-  float: left;
-  width: 190px;
-  margin-right: 10px;
-  margin-left: 10px;
+  min-height: 150px;
+  background: #333;
+  color: white;
+  -webkit-box-shadow: inset 0px -14px 8px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px -14px 8px -7px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px -14px 8px -7px rgba(0, 0, 0, 0.75);
 }
 
-.header .title {
-  margin: 0;
-  margin-top: 40px;
-  margin-left: -20px;
-  text-align: right;
+.header h1 {
+  margin: 0 auto;
+  max-width: 700px;
+  line-height: 150px;
+  font-size: 52px;
+  text-shadow: 0 -2px 0 #CCC;
 }
 
-.header .title a {
-  text-decoration: none;
-  font-weight: normal;
-  font-size: 24pt;
-  letter-spacing: 4px;
-  color: #E6E1DC;
-  text-shadow: 0px -1px 0 #A8A8A8;
+.header h1 a {
+  color: white;
 }
 
-.header .links {
+.nav {
+  font-size: 22px;
+}
+
+.nav ul {
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
   list-style-type: none;
-  text-align: right;
 }
 
-.header .links li {
-  padding-top: 10px;
+.nav ul li {
+  float: left;
+  margin-right: 5px;
+  padding: 5px 10px;
 }
 
-.header .links a {
-  font-size: 18pt;
-  text-decoration: none;
-  color: rgb(106, 156, 190);
-  padding-right: 10px;
+.nav ul li a {
+  box-sizing: border-box;
 }
 
-.header .links a:hover {
-  color: #E6E1DC;
-  text-shadow: 0px -1px 0 #A8A8A8;
+.nav ul li.current a {
+  color: #333 !important;
 }
 
-.header .links .current a {
-  color: #E6E1DC;
-  text-shadow: 0px -1px 0 #A8A8A8; 
-}
-
-.right {
-  margin: 0;
-  float: right;
-  width: 700px;
+.nav ul li a:hover {
+  color: #333;
 }
 
 .content {
-  margin: 0 auto;
-  margin-bottom: 50px;
   max-width: 700px;
-  color: rgb(34,34,34);
-  background: white;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  /*box-shadow: 5px 2px 0 #AAA;*/
+  margin: 0 auto;
+  padding: 0px 10px;
 }
 
-.content a {
-  color: rgb(106, 156, 190);
-  text-decoration: none;
+.post .post-title {
+  margin-bottom: 5px;
 }
 
-.content a:hover {
-  text-decoration: underline;
-}
-
-.post {
-  margin-top: 30px;
-  border-bottom: solid #CCC 1px;
-}
-
-.post-title {
-  margin: 10px 0;
-  padding: 5px 15px;
-  color: rgb(106, 156, 190);
-  font-size: 24pt;
-}
-
-.post-date {
+.post .post-date {
   margin: 0;
-  margin-top: -13px;
-  padding-left: 15px;
-  font-weight: normal;
-  font-style: italic;
-  color: #A8A8A8;
+  color: #aaa;
 }
 
 .post-content {
-  padding: 0 30px;
-  font-size: 14pt;
-  line-height: 1.3;
-}
-
-.post-content h3 {
-  margin-left: -10px;
-  /*border-bottom: solid rgb(34,34,34) 1px;*/
-  color: #000;
-  border-bottom: solid #CCC 1px;
-  font-weight: bold;
-  font-size: 18pt;
-}
-
-.post-content h4 {
-  font-weight: bold;
-  font-size: 14pt;
-  margin: 0;
+  border-bottom: double #ccc 3px;
 }
 
 .post-content img {
   display: block;
-  max-width: 620px;
   margin: 0 auto;
-  padding: 5px;
-  border: solid #CCC 1px;
-}
-
-.post-content img.no-border {
-  border: 0;
-}
-
-.post-content img.me {
-  display: inline;
-  float: right;
-  width: 150px;
-}
-
-/*
-.post-content pre {
-  background: #EEE;
-  border-radius: 16px;
-  padding: 15px;
-  border: solid #CCC 1px;
-}
-*/
-
-span.pre {
-  font-family: monospace;
-}
-
-.syntaxhighlighter {
-  font-size: 12pt !important;
-}
-
-.syntaxhighlighter > table {
-  padding-top: 5px !important;
 }
 
 .pagination {
-  margin-top: 25px;
   text-align: center;
 }
 
 .pagination ul {
+  display: inline-block;
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.pagination li {
-  display: inline;
-  padding: 0 5px;
+.pagination ul li {
+  float: left;
+  padding: 5px 10px;
 }
 
-.pagination li.current {  
-  background: rgb(106, 156, 190);
-  color: white;
-}
-
-.pagination li.current a {
-  color: white;
-}
-
-#disqus_thread {
-  padding: 20px;
+.pagination ul li a:hover {
+  text-decoration: underline;
 }
 
 .footer {
-  color: #A8A8A8;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  padding-left: 20px;
-  font-size: 9pt;
+  font-size: 13px;
+  text-align: center;
+  padding: 15px 0 20px 0;
+  border-top: double #ccc 3px;
 }
+
+@media only screen and (max-width: 320px) {
+  .header h1 {
+    text-align: center;
+  }
+}
+

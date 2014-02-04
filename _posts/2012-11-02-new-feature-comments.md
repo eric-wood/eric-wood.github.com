@@ -1,7 +1,7 @@
 --- 
 layout: post
 published: true
-title: New feature: comments
+title: Now with commenting!
 ---
 
 This just in!

@@ -4,11 +4,12 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>ericwood.org - Excel =&gt; LaTeX : behind the scenes</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <script src="/static/js/syntaxhighlighter/shCore.js" type="text/javascript"></script>
     <script src="/static/js/syntaxhighlighter/shAutoloader.js" type="text/javascript"></script>
     <link href="/static/css/syntaxhighlighter/shCore.css" rel="stylesheet" type="text/css">
     <link href="/static/css/syntaxhighlighter/shThemeDefault.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
     <link href='/static/css/default.css' rel='stylesheet' type='text/css'>
     <script src="/static/js/main.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -28,60 +29,61 @@
 
   </head>
   <body>
-    <div class="everything">
-      <div class="header">
-        <h1 class="title"><a href="/">ericwood.org</a></h1>
-
-        <ul class="links">
-          
-            <li class="current"><a href="/">Blog</a></li>
-          
-          
-            <li><a href="/about.html">About Me</a></li>
-          
-          <li><a href="http://github.com/eric-wood">Github</a></li>
-          <li><a href="https://twitter.com/eric_b_wood">Twitter</a></li>
-          <li><a href="http://www.linkedin.com/in/ericwoodtx">LinkedIn</a></li>
-        </ul>
-      </div>
-      <div class="right">
-        <div class="content">
+    <div class="header">
+      <h1><a href="/">eric wood</a><h1>
+    </div>
+    <div class="nav">
+      <ul class="links">
+        
+          <li class="current"><a href="/"><i class="fa fa-home"></i></a></li>
+        
+        
+          <li><a href="/about.html"><i class="fa fa-male"></i></a></li>
+        
+        <li><a href="http://github.com/eric-wood" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://twitter.com/eric_b_wood" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="http://www.linkedin.com/in/ericwoodtx" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+    <div class="content">
 
 
 
 <div class="post">
-  <h3 class="post-title">Excel =&gt; LaTeX : behind the scenes</h3>
+  <h1 class="post-title">Excel =&gt; LaTeX : behind the scenes</h1>
   <h5 class="post-date">November 01, 2012</h5>
   <div class="post-content">
-    <p>The other day I threw <a href='http://ericwood.org/excel2latex'>this</a> together for fun. It&#8217;s a bit of a hack, but there&#8217;s enough going on that it&#8217;s worth writing a little about!</p>
+    <p>The other day I threw <a href="http://ericwood.org/excel2latex">this</a> together for fun. It’s a bit of a hack, but there’s enough going on that it’s worth writing a little about!</p>
 
-<p>The premise is simple: I&#8217;m writing a lab report in LaTeX, but most of the data I took was in Excel (what can I say, it&#8217;s not bad for calculations&#8230;don&#8217;t judge me). I want to throw a nice LaTeX table into my report but don&#8217;t want to do everything by hand or save it as a CSV file and use a conversion tool.</p>
+<p>The premise is simple: I’m writing a lab report in LaTeX, but most of the data I took was in Excel (what can I say, it’s not bad for calculations…don’t judge me). I want to throw a nice LaTeX table into my report but don’t want to do everything by hand or save it as a CSV file and use a conversion tool.</p>
 
-<p>That&#8217;s where Excel =&#62; LaTeX comes into play! With the fancy new HTML5 file stuffs it&#8217;s possible to parse XLSX files <em>in the browser</em> without having to run any code server-side! All you have to do is grad an XLSX file into the browser and it spews out a LaTeX table. Howcoolisthat?!</p>
+<p>That’s where Excel =&gt; LaTeX comes into play! With the fancy new HTML5 file stuffs it’s possible to parse XLSX files <em>in the browser</em> without having to run any code server-side! All you have to do is grad an XLSX file into the browser and it spews out a LaTeX table. Howcoolisthat?!</p>
 
-<h3 id='xlsx_and_office_open_xml'>XLSX and Office Open XML</h3>
+<h3 id="xlsx_and_office_open_xml">XLSX and Office Open XML</h3>
 
-<p>Before we dive into the implementation, lets talk a bit about the XLSX / <a href='http://en.wikipedia.org/wiki/Office_Open_XML'>Office Open XML</a> formats.</p>
+<p>Before we dive into the implementation, lets talk a bit about the XLSX / <a href="http://en.wikipedia.org/wiki/Office_Open_XML">Office Open XML</a> formats.</p>
 
-<p>Microsoft is totally down with the open standards thing, yo. They&#8217;re nice enough to go as far as creating an <a href='http://www.ecma-international.org/publications/standards/Ecma-376.htm'>ECMA standard</a> format for all of their Office apps. Granted, the real formats expand quite a bit on OOXML, but even then they publish how those formats work.</p>
+<p>Microsoft is totally down with the open standards thing, yo. They’re nice enough to go as far as creating an <a href="http://www.ecma-international.org/publications/standards/Ecma-376.htm">ECMA standard</a> format for all of their Office apps. Granted, the real formats expand quite a bit on OOXML, but even then they publish how those formats work.</p>
 
 <p>For poking around purposes, I created a simple Excel file:</p>
-<img class='no-border' src='/static/images/excel2latex/sample_spreadsheet.png' />
-<p>First things first: XLSX files are zipped, so we need to unzip the file first. Here&#8217;s the contents:</p>
 
-<p><img alt='' src='/static/images/excel2latex/dir.png' /></p>
+<p><img class='no-border' src='/static/images/excel2latex/sample_spreadsheet.png' /></p>
 
-<p>What&#8217;s going on here? Lots of things.</p>
+<p>First things first: XLSX files are zipped, so we need to unzip the file first. Here’s the contents:</p>
 
-<p><em>Confession</em>: I didn&#8217;t read the spec. I figured all of this out by poking around the XML files&#8230;so I only understand a very small subset of the format :(</p>
+<p><img src="/static/images/excel2latex/dir.png" alt="" /></p>
+
+<p>What’s going on here? Lots of things.</p>
+
+<p><em>Confession</em>: I didn’t read the spec. I figured all of this out by poking around the XML files…so I only understand a very small subset of the format :(</p>
 
 <p>The only directory we care about is <span class='pre'>xl/</span>, where the data lives.</p>
 
-<p>Here are the important files: <ul>
+<p>Here are the important files:</p>
+<ul>
   <li><span class='pre'>xl/worksheets/sheet1.xml</span> - the data</li>
   <li><span class='pre'>xl/sharedStrings.xml</span> - table of strings</li>
-</ul></p>
-
+</ul>
 <p>Lets take a look at <span class='pre'>sheet1.xml</span>:</p>
 <pre class='brush: xml'>
 <sheetData>
@@ -119,15 +121,15 @@
     </row>
 </sheetData>
 </pre>
-<p>It&#8217;s fairly obvious what&#8217;s going on here: <span class='pre'>&lt;row&gt;</span> denotes a row (with the r attribute being the number), <span class='pre'>&lt;c&gt;</span> is a column, and <span class='pre'>&lt;v&gt;</span> is a value.</p>
+<p>It’s fairly obvious what’s going on here: <span class='pre'>&lt;row&gt;</span> denotes a row (with the r attribute being the number), <span class='pre'>&lt;c&gt;</span> is a column, and <span class='pre'>&lt;v&gt;</span> is a value.</p>
 
-<p>But wait! Where are our previous letters and strings?! They certainly aren&#8217;t in any of the value tags!</p>
+<p>But wait! Where are our previous letters and strings?! They certainly aren’t in any of the value tags!</p>
 
-<p>Calm down. They&#8217;re safe and sound in <span class='pre'>sharedStrings.xml</span>.</p>
+<p>Calm down. They’re safe and sound in <span class='pre'>sharedStrings.xml</span>.</p>
 
-<p>Columns have a &#8220;t&#8221; attribute which denotes the data type. In the case of strings, we see <span class='pre'>t="s"</span>. This means we&#8217;ll be able to find the string in the string table at the index given to us in the v tag.</p>
+<p>Columns have a “t” attribute which denotes the data type. In the case of strings, we see <span class='pre'>t=&quot;s&quot;</span>. This means we’ll be able to find the string in the string table at the index given to us in the v tag.</p>
 
-<p>So what&#8217;s in <span class='pre'>sharedStrings.xml</span>?</p>
+<p>So what’s in <span class='pre'>sharedStrings.xml</span>?</p>
 <pre class='brush: xml'>
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <sst count='5' uniqueCount='5' xmlns='http://schemas.openxmlformats.org/spreadsheetml/2006/main'>
@@ -150,11 +152,11 @@
 </pre>
 <p>No explanation is really needed here.</p>
 
-<h3 id='the_javascript'>The Javascript</h3>
+<h3 id="the_javascript">The Javascript</h3>
 
 <p>Now, to the actual conversion code!</p>
 
-<h4 id='html5_files_shenanigans'>HTML5, files, shenanigans</h4>
+<h4 id="html5_files_shenanigans">HTML5, files, shenanigans</h4>
 
 <p>The main feature of this is being able to drag files into the browser for conversion. HTML5 provides a super kewl API for this sort of thing.</p>
 
@@ -194,13 +196,13 @@ handleFile: function(event) {
   // snip...
 }
 </pre>
-<p>We can grab the <span class='pre'>File</span> objects passed in with the <span class='pre'>dataTransfer.files</span> thingamajig. You can find more info on the <span class='pre'>File</span> object in the <a href='http://www.w3.org/TR/FileAPI/'>W3C spec</a>.</p>
+<p>We can grab the <span class='pre'>File</span> objects passed in with the <span class='pre'>dataTransfer.files</span> thingamajig. You can find more info on the <span class='pre'>File</span> object in the <a href="http://www.w3.org/TR/FileAPI/">W3C spec</a>.</p>
 
-<h4 id='unzipping'>Unzipping</h4>
+<h4 id="unzipping">Unzipping</h4>
 
-<p>As I mentioned earlier, we can&#8217;t get at the data in the XLSX file unless we pull down its zipper. This poses a little bit of a challenge, since there&#8217;s no built-in way of doing this with Javascript.</p>
+<p>As I mentioned earlier, we can’t get at the data in the XLSX file unless we pull down its zipper. This poses a little bit of a challenge, since there’s no built-in way of doing this with Javascript.</p>
 
-<p>Thankfully, though, someone was one step ahead of me and write <a href='http://gildas-lormeau.github.com/zip.js/'>zip.js</a>, which takes care of all of this magic for me. It&#8217;s a beautiful library.</p>
+<p>Thankfully, though, someone was one step ahead of me and write <a href="http://gildas-lormeau.github.com/zip.js/">zip.js</a>, which takes care of all of this magic for me. It’s a beautiful library.</p>
 
 <p>Passing in the binary blob we got in the previous step, it spits out an array of <span class='pre'>File</span> objects for us to use.</p>
 <pre class='brush: js'>
@@ -222,19 +224,19 @@ zip.createReader(new zip.BlobReader(blob), function(reader) {
   });
 });
 </pre>
-<p>This is all straight out of the <a href='http://gildas-lormeau.github.com/zip.js/core-api.html#zip-reading-example'>zip.js documentation</a> for the most part. Nothing crazy, we just give a callback for each file that gets read in.</p>
+<p>This is all straight out of the <a href="http://gildas-lormeau.github.com/zip.js/core-api.html#zip-reading-example">zip.js documentation</a> for the most part. Nothing crazy, we just give a callback for each file that gets read in.</p>
 
-<p>Note that we filter out all files that aren&#8217;t the worksheets or the string table.</p>
+<p>Note that we filter out all files that aren’t the worksheets or the string table.</p>
 
-<p>Another thing to keep in mind: all of this file IO is <em>asynchronous</em>&#8230;you can&#8217;t read the file and move on to other code that requires data from it. Structure things in such a way that all of the file handling is separated into functions that call each other rather than procedural code which expects the file reading to block.</p>
+<p>Another thing to keep in mind: all of this file IO is <em>asynchronous</em>…you can’t read the file and move on to other code that requires data from it. Structure things in such a way that all of the file handling is separated into functions that call each other rather than procedural code which expects the file reading to block.</p>
 
-<h4 id='extracting_the_data'>Extracting the data</h4>
+<h4 id="extracting_the_data">Extracting the data</h4>
 
 <p>So now that we have a buncha XML in the form of strings, we can start the parsing process!</p>
 
-<p>This is pretty simple: we use jQuery&#8217;s parsing abilities to create a new DOM tree as a jQuery object. From here we can use our favorite jQuery selectors to grab the data.</p>
+<p>This is pretty simple: we use jQuery’s parsing abilities to create a new DOM tree as a jQuery object. From here we can use our favorite jQuery selectors to grab the data.</p>
 
-<p>Here&#8217;s an example where we build the string table (we do this first so we can substitute the string values when reading in the worksheet itself):</p>
+<p>Here’s an example where we build the string table (we do this first so we can substitute the string values when reading in the worksheet itself):</p>
 <pre class='brush: js'>
 parseStringTable: function(data) {
   var doc = $(data);
@@ -277,7 +279,7 @@ processSheet: function(data, stringTable) {
   return table;
 },
 </pre>
-<p>There&#8217;s not much going on there; we read in each row, grab the columns, get the data. If it&#8217;s a string, we look it up in the string table and call <span class='pre'>latexEscape()</span>, which escapes symbols with special importance in LaTeX so there&#8217;s no conflicts in the final output.</p>
+<p>There’s not much going on there; we read in each row, grab the columns, get the data. If it’s a string, we look it up in the string table and call <span class='pre'>latexEscape()</span>, which escapes symbols with special importance in LaTeX so there’s no conflicts in the final output.</p>
 <pre class='brush: js'>
 latexEscape: function(text) {
   var specials = ['\\', '&amp;', '%', '$', '#', '_', '{', '}', '~', '^'];
@@ -288,9 +290,9 @@ latexEscape: function(text) {
   return text;
 },
 </pre>
-<p>We&#8217;ve now got the data built up in a 2D array! We can now generate the LaTeX table!</p>
+<p>We’ve now got the data built up in a 2D array! We can now generate the LaTeX table!</p>
 
-<p>This part was a little messy. I&#8217;d prefer not to go into the code, since I&#8217;d like to rewrite it in the near future. It&#8217;s a huge mess and I feel like there&#8217;s a few bugs in it. But here it is anyways:</p>
+<p>This part was a little messy. I’d prefer not to go into the code, since I’d like to rewrite it in the near future. It’s a huge mess and I feel like there’s a few bugs in it. But here it is anyways:</p>
 <pre class='brush: js'>
 toLatex: function(table) {
   var max = 0;
@@ -326,11 +328,11 @@ toLatex: function(table) {
 </pre>
 <p>Tada!</p>
 
-<h3 id='conclusion'>Conclusion</h3>
+<h3 id="conclusion">Conclusion</h3>
 
-<p>This was a fun hack to throw together. It&#8217;s far from perfect, but it does exactly what I need it to for basic numerical and string data.</p>
+<p>This was a fun hack to throw together. It’s far from perfect, but it does exactly what I need it to for basic numerical and string data.</p>
 
-<p>There&#8217;s a few things I&#8217;d like to add in the future:</p>
+<p>There’s a few things I’d like to add in the future:</p>
 
 <ul>
 <li>Handle formatting,, such as the number of decimal places for numbers</li>
@@ -361,12 +363,11 @@ var disqus_shortname = 'ericwoodorg'; // required: replace example with your for
 
 
 
-          <div class="footer">
-            Copyright Eric Wood 2012 &nbsp;|&nbsp; Hosted <a href="https://github.com/eric-wood/eric-wood.github.com">here</a> by Github
-          </div>
-        </div>
+      <div class="footer">
+        Copyright Eric Wood 2014 &nbsp;|&nbsp; <a href="https://github.com/eric-wood/eric-wood.github.com">View source</a> on Github
       </div>
     </div>
   </body>
 </html>
+
 

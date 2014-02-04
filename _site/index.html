@@ -4,11 +4,12 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>ericwood.org - blog</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <script src="/static/js/syntaxhighlighter/shCore.js" type="text/javascript"></script>
     <script src="/static/js/syntaxhighlighter/shAutoloader.js" type="text/javascript"></script>
     <link href="/static/css/syntaxhighlighter/shCore.css" rel="stylesheet" type="text/css">
     <link href="/static/css/syntaxhighlighter/shThemeDefault.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
     <link href='/static/css/default.css' rel='stylesheet' type='text/css'>
     <script src="/static/js/main.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -28,358 +29,82 @@
 
   </head>
   <body>
-    <div class="everything">
-      <div class="header">
-        <h1 class="title"><a href="/">ericwood.org</a></h1>
-
-        <ul class="links">
-          
-            <li class="current"><a href="/">Blog</a></li>
-          
-          
-            <li><a href="/about.html">About Me</a></li>
-          
-          <li><a href="http://github.com/eric-wood">Github</a></li>
-          <li><a href="https://twitter.com/eric_b_wood">Twitter</a></li>
-          <li><a href="http://www.linkedin.com/in/ericwoodtx">LinkedIn</a></li>
-        </ul>
-      </div>
-      <div class="right">
-        <div class="content">
+    <div class="header">
+      <h1><a href="/">eric wood</a><h1>
+    </div>
+    <div class="nav">
+      <ul class="links">
+        
+          <li class="current"><a href="/"><i class="fa fa-home"></i></a></li>
+        
+        
+          <li><a href="/about.html"><i class="fa fa-male"></i></a></li>
+        
+        <li><a href="http://github.com/eric-wood" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://twitter.com/eric_b_wood" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="http://www.linkedin.com/in/ericwoodtx" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+    <div class="content">
 
 
 
   
   <div class="post">
-    <a href="/2012/11/12/i-love-my-kindle.html"><h3 class="post-title">I love my Kindle</h3></a>
-    <h5 class="post-date">November 12, 2012</h5>
+    <a href="/2013/08/24/excel2latex-updates.html"><h1 class="post-title">excel2latex updates!</h1></a>
+    <h5 class="post-date">August 24, 2013</h5>
     <div class="post-content">
-      <p>I&#8217;ve been using my Kindle (the vanilla one) for a while now. What a beautiful device.</p>
+      <p>It finally happened!</p>
 
-<p>Because of my line of work/study, I spend inordinate amounts of time staring at a stupid computer screen. It gets a bit old, especially if I&#8217;m trying to read a long article. Backlights are bad for eyes. There&#8217;s things you can do to reduce eye strain, but in the end it&#8217;s going to be more comfortable to stare at pieces of paper than it is to stare at a monitor.</p>
+<p>After neglecting <a href="http://ericwood.org/excel2latex/">excel2latex</a> for a long time, I’ve finally gotten around to adding a few improvements.</p>
 
-<p>This is where my Kindle shines; the display is basically just paper. Now, rather than being glued to my computer, I can take news, articles, and books with me as if I were carrying around a bunch of paperbacks. I&#8217;m sure you&#8217;ve already heard this sales pitch before, so I&#8217;ll spare you.</p>
+<p>Previously, there was no way to select which workbook you wanted to convert; the script defaulted to the first one and ignored all others. This was due to the limited amount of time I had available when working on the project initially (it was a huuuuuuuge hack). A few users pointed out that this really inconvenienced them, so I took a little bit of time today to add that functionality.</p>
 
-<p>Really, I just want to talk about a few things I&#8217;ve used to get even more mileage out of my Kindle.</p>
+<p>Now, when an excel file is dragged onto the page, you get a dropdown box that allows you to switch between the different workbooks. Hooray! Also note that I’ve made it so the contents of the text box get selected when you click on it, saving valuable time.</p>
 
-<h3 id='tools_you_should_totally_look_into_if_you_have_a_kindle'>Tools you should totally look into if you have a Kindle</h3>
+<p>Thanks a ton to everyone who has been using my silly little hack of a project! I never really imagined anyone but myself taking advantage of it, so seeing the usage stats has been a pleasant surprise! :)</p>
 
-<h4 id='readability'>Readability</h4>
-
-<p><a href='http://readability.com/'>Readability</a> is an awesome service. Basically, it extracts articles from websites. Say, for example, you&#8217;re trying to read something on one of those stupid web-3.0 zomg tech news websites and it&#8217;s trying to bring down your browser and distract you. You&#8217;re sick of the bullshit, so you click the Readability browser extension and ask to just have the article.Now you&#8217;ve got a nice, clean copy of the stuff you care about. Awesome.</p>
-
-<p>In addition to the article extraction stuff, Readability is a &#8220;bookmarking&#8221; service of sorts; you can save articles for later and read them on other devices (iOS, Kindle, etc.) This is the part that lets your Kindle really shine! The browser extension lets you send articles directly to your kindle.</p>
-
-<h4 id='kindlefeeder'>Kindlefeeder</h4>
-
-<p>I&#8217;ve just started using this service, and I&#8217;ve been blown away by it. <a href='http://kindlefeeder.com/'>Kindlefeeder</a> is a handy service that takes RSS feeds from different websites and compiles them down into a beautiful eBook that it sends directly to your device.</p>
-
-<p>This works best for blogs; I&#8217;ve found that tech news sites like <a href='http://news.ycombinator.com'>Hacker News</a> and <a href='http://slashdot.org'>Slashdot</a> don&#8217;t work well, since they&#8217;re really just links to other news sites.</p>
+<p>Want to help out with the project? I read every single issue posted to the <a href="https://github.com/eric-wood/excel2latex">Github repository</a>, and really need the feedback…there’s too many edge cases for me to test it fully in my spare time.</p>
     </div>
   </div>
 
   <div class="post">
-    <a href="/2012/11/02/new-feature-comments.html"><h3 class="post-title">New Feature Comments</h3></a>
+    <a href="/2012/11/12/i-love-my-kindle.html"><h1 class="post-title">I love my Kindle</h1></a>
+    <h5 class="post-date">November 12, 2012</h5>
+    <div class="post-content">
+      <p>I’ve been using my Kindle (the vanilla one) for a while now. What a beautiful device.</p>
+
+<p>Because of my line of work/study, I spend inordinate amounts of time staring at a stupid computer screen. It gets a bit old, especially if I’m trying to read a long article. Backlights are bad for eyes. There’s things you can do to reduce eye strain, but in the end it’s going to be more comfortable to stare at pieces of paper than it is to stare at a monitor.</p>
+
+<p>This is where my Kindle shines; the display is basically just paper. Now, rather than being glued to my computer, I can take news, articles, and books with me as if I were carrying around a bunch of paperbacks. I’m sure you’ve already heard this sales pitch before, so I’ll spare you.</p>
+
+<p>Really, I just want to talk about a few things I’ve used to get even more mileage out of my Kindle.</p>
+
+<h3 id="tools_you_should_totally_look_into_if_you_have_a_kindle">Tools you should totally look into if you have a Kindle</h3>
+
+<h4 id="readability">Readability</h4>
+
+<p><a href="http://readability.com/">Readability</a> is an awesome service. Basically, it extracts articles from websites. Say, for example, you’re trying to read something on one of those stupid web-3.0 zomg tech news websites and it’s trying to bring down your browser and distract you. You’re sick of the bullshit, so you click the Readability browser extension and ask to just have the article.Now you’ve got a nice, clean copy of the stuff you care about. Awesome.</p>
+
+<p>In addition to the article extraction stuff, Readability is a “bookmarking” service of sorts; you can save articles for later and read them on other devices (iOS, Kindle, etc.) This is the part that lets your Kindle really shine! The browser extension lets you send articles directly to your kindle.</p>
+
+<h4 id="kindlefeeder">Kindlefeeder</h4>
+
+<p>I’ve just started using this service, and I’ve been blown away by it. <a href="http://kindlefeeder.com/">Kindlefeeder</a> is a handy service that takes RSS feeds from different websites and compiles them down into a beautiful eBook that it sends directly to your device.</p>
+
+<p>This works best for blogs; I’ve found that tech news sites like <a href="http://news.ycombinator.com">Hacker News</a> and <a href="http://slashdot.org">Slashdot</a> don’t work well, since they’re really just links to other news sites.</p>
+    </div>
+  </div>
+
+  <div class="post">
+    <a href="/2012/11/02/new-feature-comments.html"><h1 class="post-title">Now with commenting!</h1></a>
     <h5 class="post-date">November 02, 2012</h5>
     <div class="post-content">
       <p>This just in!</p>
 
-<p>You can now leave comments. All &#60; 100 visitors will now be able to leave comments on blog posts. This is a very exciting development, I know :)</p>
+<p>You can now leave comments. All &lt; 100 visitors will now be able to leave comments on blog posts. This is a very exciting development, I know :)</p>
 
-<p>So&#8230;keep it constructive! I&#8217;d love to hear what everyone has to say about things!</p>
-    </div>
-  </div>
-
-  <div class="post">
-    <a href="/2012/11/01/excel-behind-the-scenes.html"><h3 class="post-title">Excel =&gt; LaTeX : behind the scenes</h3></a>
-    <h5 class="post-date">November 01, 2012</h5>
-    <div class="post-content">
-      <p>The other day I threw <a href='http://ericwood.org/excel2latex'>this</a> together for fun. It&#8217;s a bit of a hack, but there&#8217;s enough going on that it&#8217;s worth writing a little about!</p>
-
-<p>The premise is simple: I&#8217;m writing a lab report in LaTeX, but most of the data I took was in Excel (what can I say, it&#8217;s not bad for calculations&#8230;don&#8217;t judge me). I want to throw a nice LaTeX table into my report but don&#8217;t want to do everything by hand or save it as a CSV file and use a conversion tool.</p>
-
-<p>That&#8217;s where Excel =&#62; LaTeX comes into play! With the fancy new HTML5 file stuffs it&#8217;s possible to parse XLSX files <em>in the browser</em> without having to run any code server-side! All you have to do is grad an XLSX file into the browser and it spews out a LaTeX table. Howcoolisthat?!</p>
-
-<h3 id='xlsx_and_office_open_xml'>XLSX and Office Open XML</h3>
-
-<p>Before we dive into the implementation, lets talk a bit about the XLSX / <a href='http://en.wikipedia.org/wiki/Office_Open_XML'>Office Open XML</a> formats.</p>
-
-<p>Microsoft is totally down with the open standards thing, yo. They&#8217;re nice enough to go as far as creating an <a href='http://www.ecma-international.org/publications/standards/Ecma-376.htm'>ECMA standard</a> format for all of their Office apps. Granted, the real formats expand quite a bit on OOXML, but even then they publish how those formats work.</p>
-
-<p>For poking around purposes, I created a simple Excel file:</p>
-<img class='no-border' src='/static/images/excel2latex/sample_spreadsheet.png' />
-<p>First things first: XLSX files are zipped, so we need to unzip the file first. Here&#8217;s the contents:</p>
-
-<p><img alt='' src='/static/images/excel2latex/dir.png' /></p>
-
-<p>What&#8217;s going on here? Lots of things.</p>
-
-<p><em>Confession</em>: I didn&#8217;t read the spec. I figured all of this out by poking around the XML files&#8230;so I only understand a very small subset of the format :(</p>
-
-<p>The only directory we care about is <span class='pre'>xl/</span>, where the data lives.</p>
-
-<p>Here are the important files: <ul>
-  <li><span class='pre'>xl/worksheets/sheet1.xml</span> - the data</li>
-  <li><span class='pre'>xl/sharedStrings.xml</span> - table of strings</li>
-</ul></p>
-
-<p>Lets take a look at <span class='pre'>sheet1.xml</span>:</p>
-<pre class='brush: xml'>
-<sheetData>
-    <row r='1' spans='1:2'>
-        <c r='A1' t='s'>
-            <v>4</v>
-        </c>
-        <c r='B1' t='s'>
-            <v>3</v>
-        </c>
-    </row>
-    <row r='2' spans='1:2'>
-        <c r='A2'>
-            <v>1</v>
-        </c>
-        <c r='B2' t='s'>
-            <v>0</v>
-        </c>
-    </row>
-    <row r='3' spans='1:2'>
-        <c r='A3'>
-            <v>2</v>
-        </c>
-        <c r='B3' t='s'>
-            <v>1</v>
-        </c>
-    </row>
-    <row r='4' spans='1:2'>
-        <c r='A4'>
-            <v>3</v>
-        </c>
-        <c r='B4' t='s'>
-            <v>2</v>
-        </c>
-    </row>
-</sheetData>
-</pre>
-<p>It&#8217;s fairly obvious what&#8217;s going on here: <span class='pre'>&lt;row&gt;</span> denotes a row (with the r attribute being the number), <span class='pre'>&lt;c&gt;</span> is a column, and <span class='pre'>&lt;v&gt;</span> is a value.</p>
-
-<p>But wait! Where are our previous letters and strings?! They certainly aren&#8217;t in any of the value tags!</p>
-
-<p>Calm down. They&#8217;re safe and sound in <span class='pre'>sharedStrings.xml</span>.</p>
-
-<p>Columns have a &#8220;t&#8221; attribute which denotes the data type. In the case of strings, we see <span class='pre'>t="s"</span>. This means we&#8217;ll be able to find the string in the string table at the index given to us in the v tag.</p>
-
-<p>So what&#8217;s in <span class='pre'>sharedStrings.xml</span>?</p>
-<pre class='brush: xml'>
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<sst count='5' uniqueCount='5' xmlns='http://schemas.openxmlformats.org/spreadsheetml/2006/main'>
-<si>
-    <t>A</t>
-</si>
-<si>
-    <t>B</t>
-</si>
-<si>
-    <t>C</t>
-</si>
-<si>
-    <t>Letters!</t>
-</si>
-<si>
-    <t>Numbars!</t>
-</si>
-</sst>
-</pre>
-<p>No explanation is really needed here.</p>
-
-<h3 id='the_javascript'>The Javascript</h3>
-
-<p>Now, to the actual conversion code!</p>
-
-<h4 id='html5_files_shenanigans'>HTML5, files, shenanigans</h4>
-
-<p>The main feature of this is being able to drag files into the browser for conversion. HTML5 provides a super kewl API for this sort of thing.</p>
-
-<p>Everything is as simple as the <span class='pre'>dragover</span> and <span class='pre'>drop</span> events. Lets take a look at a sample:</p>
-<pre class='brush: js'>
-// hack because of jQuery shenanigans
-jQuery.event.props.push('dataTransfer');
-
-$('body').bind('dragover', function(event) {
-  event.stopPropagation();
-  event.preventDefault();
-  event.dataTransfer.dropEffect = 'copy';
-});
-
-$('body').bind('drop', excelParser.handleFile);
-</pre>
-<p>The <span class='pre'>dragover</span> event gets triggered when the user starts dragging the file into the browser window. Most websites use this to display some kind of clue to the user that things are happening.</p>
-
-<p>The real magic happens on the <span class='pre'>drop</span> event. This gets fired when the file is actually dropped. As you can see, we supplied an event handler to kick off the processing.</p>
-
-<p>Also note that each event has a call to <span class='pre'>stopPropagation()</span> and <span class='pre'>preventDefault()</span>. We want to make sure that the only actions that happened on these events were specified by us.</p>
-
-<p>Now lets take a peek at the event handler:</p>
-<pre class='brush: js'>
-handleFile: function(event) {
-  // prevent default browser behavior
-  event.stopPropagation();
-  event.preventDefault();
-
-  // get file information
-  var files = event.dataTransfer.files;
-  if(!files.length) {
-    // no files were given somehow...
-    $('#latex-output').val('No files were given...try again?');
-    return false;
-  }
-  // snip...
-}
-</pre>
-<p>We can grab the <span class='pre'>File</span> objects passed in with the <span class='pre'>dataTransfer.files</span> thingamajig. You can find more info on the <span class='pre'>File</span> object in the <a href='http://www.w3.org/TR/FileAPI/'>W3C spec</a>.</p>
-
-<h4 id='unzipping'>Unzipping</h4>
-
-<p>As I mentioned earlier, we can&#8217;t get at the data in the XLSX file unless we pull down its zipper. This poses a little bit of a challenge, since there&#8217;s no built-in way of doing this with Javascript.</p>
-
-<p>Thankfully, though, someone was one step ahead of me and write <a href='http://gildas-lormeau.github.com/zip.js/'>zip.js</a>, which takes care of all of this magic for me. It&#8217;s a beautiful library.</p>
-
-<p>Passing in the binary blob we got in the previous step, it spits out an array of <span class='pre'>File</span> objects for us to use.</p>
-<pre class='brush: js'>
-// unzip and process files
-zip.createReader(new zip.BlobReader(blob), function(reader) {
-  reader.getEntries(function(entries) {
-    if(!entries.length) { return false; }
-                                                              
-    // get the string table
-    var stFile = $.grep(entries, function(n,i) {
-      return /^xl\/sharedStrings\.xml$/.test(n.filename);
-    })[0];
-                                                              
-    stFile.getData(new zip.TextWriter(), function(text) {
-      var stringTable = excelParser.parseStringTable(text);
-      excelParser.handleSheet(entries, stringTable);
-    });
-                                                              
-  });
-});
-</pre>
-<p>This is all straight out of the <a href='http://gildas-lormeau.github.com/zip.js/core-api.html#zip-reading-example'>zip.js documentation</a> for the most part. Nothing crazy, we just give a callback for each file that gets read in.</p>
-
-<p>Note that we filter out all files that aren&#8217;t the worksheets or the string table.</p>
-
-<p>Another thing to keep in mind: all of this file IO is <em>asynchronous</em>&#8230;you can&#8217;t read the file and move on to other code that requires data from it. Structure things in such a way that all of the file handling is separated into functions that call each other rather than procedural code which expects the file reading to block.</p>
-
-<h4 id='extracting_the_data'>Extracting the data</h4>
-
-<p>So now that we have a buncha XML in the form of strings, we can start the parsing process!</p>
-
-<p>This is pretty simple: we use jQuery&#8217;s parsing abilities to create a new DOM tree as a jQuery object. From here we can use our favorite jQuery selectors to grab the data.</p>
-
-<p>Here&#8217;s an example where we build the string table (we do this first so we can substitute the string values when reading in the worksheet itself):</p>
-<pre class='brush: js'>
-parseStringTable: function(data) {
-  var doc = $(data);
-  var stringTags = doc.find('si');
-  var strings = $.map(stringTags, function(s,i) {
-    return $(s).find('t').text();
-  });
-
-  return strings;
-},
-</pre>
-<p>Pretty simple, eh? The string table is just an array; when values refer to strings in the worksheet they simply give us the index into the table.</p>
-
-<p>Now for the main event: reading in the table itself!</p>
-<pre class='brush: js'>
-processSheet: function(data, stringTable) {
-  // get jQuery object out of the data for accessing stuffs
-  var doc = $(data);
-
-  var table = [];
-
-  var rows = doc.find('sheetdata row');
-  $.each(rows, function(i,row) {
-    var rowNum = parseInt($(row).attr('r'));
-
-    // get columns
-    var cols = $(row).find('c');
-    var colVals = $.map(cols, function(col,j) {
-      var col = $(col);
-      var val = excelParser.latexEscape(col.find('v').text());
-      if(col.attr('t') == 's') {
-        return excelParser.latexEscape(stringTable[parseInt(val)]);
-      } else {
-        return val;
-      }
-    });
-    table[rowNum-1] = colVals;
-  });
-
-  return table;
-},
-</pre>
-<p>There&#8217;s not much going on there; we read in each row, grab the columns, get the data. If it&#8217;s a string, we look it up in the string table and call <span class='pre'>latexEscape()</span>, which escapes symbols with special importance in LaTeX so there&#8217;s no conflicts in the final output.</p>
-<pre class='brush: js'>
-latexEscape: function(text) {
-  var specials = ['\\', '&amp;', '%', '$', '#', '_', '{', '}', '~', '^'];
-  $.each(specials, function(i,special) {
-    text = text.replace(special, '\\' + special);
-  });
-
-  return text;
-},
-</pre>
-<p>We&#8217;ve now got the data built up in a 2D array! We can now generate the LaTeX table!</p>
-
-<p>This part was a little messy. I&#8217;d prefer not to go into the code, since I&#8217;d like to rewrite it in the near future. It&#8217;s a huge mess and I feel like there&#8217;s a few bugs in it. But here it is anyways:</p>
-<pre class='brush: js'>
-toLatex: function(table) {
-  var max = 0;
-  for(var i=0; i &lt; table.length; i++) {
-    if(table[i] &amp;&amp; table[i].length &gt; max) { max = table[i].length; }
-  }
-
-  var numCols = max;
-  var args = [];
-  for(var i=0; i &lt; numCols; i++) {
-    args[i] = 'l';
-  }
-  args = ' | ' + args.join(' | ') + ' | ';
-  var latex = "\\begin{tabular}{" + args + "}\n\\hline\n";
-  for(var i=0; i &lt; table.length; i++) {
-    var cols = table[i];
-    // TODO: replace "&amp;" with "\&amp;"
-    if(cols === undefined) { cols = []; }
-    if(cols.length &lt; numCols) {
-      for(var x=cols.length; x &lt; max; x++) {
-        cols[x] = '\\ ';
-      }
-    }
-
-    latex += "\t" + cols.join(' &amp; ');
-    latex += " \\\\ \\hline\n";
-  }
-
-  latex += "\\end{tabular}\n";
-  
-  $('#latex-output').val(latex);
-},
-</pre>
-<p>Tada!</p>
-
-<h3 id='conclusion'>Conclusion</h3>
-
-<p>This was a fun hack to throw together. It&#8217;s far from perfect, but it does exactly what I need it to for basic numerical and string data.</p>
-
-<p>There&#8217;s a few things I&#8217;d like to add in the future:</p>
-
-<ul>
-<li>Handle formatting,, such as the number of decimal places for numbers</li>
-
-<li>Text formatting, such as bold and italics</li>
-
-<li>Border styles</li>
-</ul>
+<p>So…keep it constructive! I’d love to hear what everyone has to say about things!</p>
     </div>
   </div>
 
@@ -399,6 +124,10 @@ toLatex: function(table) {
           <li><a href="/page2">2</a></li>
         
       
+        
+          <li><a href="/page3">3</a></li>
+        
+      
 
     
       <li><a href="/page2">Next</a></li>
@@ -407,12 +136,11 @@ toLatex: function(table) {
 </div>
 
 
-          <div class="footer">
-            Copyright Eric Wood 2012 &nbsp;|&nbsp; Hosted <a href="https://github.com/eric-wood/eric-wood.github.com">here</a> by Github
-          </div>
-        </div>
+      <div class="footer">
+        Copyright Eric Wood 2014 &nbsp;|&nbsp; <a href="https://github.com/eric-wood/eric-wood.github.com">View source</a> on Github
       </div>
     </div>
   </body>
 </html>
+
 
