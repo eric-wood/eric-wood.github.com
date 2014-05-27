@@ -130,7 +130,7 @@ img.me {
   padding: 2px;
 }
 
-.pre {
+code, .pre {
   font-family: monospace;
   background: #f8f8f8;
   border: solid #ddd 1px;

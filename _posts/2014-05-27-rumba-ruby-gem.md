@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: Rumba 0.1 released!
+title: Rumba 0.1 released
 ---
 
 Several years ago I wrote this weird Ruby library that speaks the Roomba protocol as part of my senior design project in college. It was pretty cool and seemed to work well.
