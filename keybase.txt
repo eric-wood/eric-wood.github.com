@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/ericwood
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://ericwood.org
+  * I am ericwood (https://keybase.io/ericwood) on keybase.
+  * I have a public key ASBMbbFSMIrlv1j98Jcjsz5slmSGgDdRWOumjw9Idpv7SAo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01204c6db152308ae5bf58fdf09723b33e6c96648680375158eba68f0f48769bfb480a",
+            "host": "keybase.io",
+            "kid": "01204c6db152308ae5bf58fdf09723b33e6c96648680375158eba68f0f48769bfb480a",
+            "uid": "36aca139c9151b122e93d4c7738d7e19",
+            "username": "ericwood"
+        },
+        "service": {
+            "hostname": "ericwood.org",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.15"
+    },
+    "ctime": 1460575914,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1460575847,
+        "hash": "8e9202897fba427d844efb0ce5b0612441140b1add4e6062574e5d50bb23292dec67f1c302cb9fd66bbbf504e4e7c6a7bbfef4c3c11ee3d60a2df3b7ea05d228",
+        "seqno": 441427
+    },
+    "prev": "168dbf33d748c994287db15e54d9945d8458341610307f740169b09c3a3b6581",
+    "seqno": 8,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+g6Rib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgTG2xUjCK5b9Y/fCXI7M+bJZkhoA3UVjrpo8PSHab+0gKp3BheWxvYWTFAvN7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNGM2ZGIxNTIzMDhhZTViZjU4ZmRmMDk3MjNiMzNlNmM5NjY0ODY4MDM3NTE1OGViYTY4ZjBmNDg3NjliZmI0ODBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNGM2ZGIxNTIzMDhhZTViZjU4ZmRmMDk3MjNiMzNlNmM5NjY0ODY4MDM3NTE1OGViYTY4ZjBmNDg3NjliZmI0ODBhIiwidWlkIjoiMzZhY2ExMzljOTE1MWIxMjJlOTNkNGM3NzM4ZDdlMTkiLCJ1c2VybmFtZSI6ImVyaWN3b29kIn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJlcmljd29vZC5vcmciLCJwcm90b2NvbCI6Imh0dHA6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjE1In0sImN0aW1lIjoxNDYwNTc1OTE0LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0NjA1NzU4NDcsImhhc2giOiI4ZTkyMDI4OTdmYmE0MjdkODQ0ZWZiMGNlNWIwNjEyNDQxMTQwYjFhZGQ0ZTYwNjI1NzRlNWQ1MGJiMjMyOTJkZWM2N2YxYzMwMmNiOWZkNjZiYmJmNTA0ZTRlN2M2YTdiYmZlZjRjM2MxMWVlM2Q2MGEyZGYzYjdlYTA1ZDIyOCIsInNlcW5vIjo0NDE0Mjd9LCJwcmV2IjoiMTY4ZGJmMzNkNzQ4Yzk5NDI4N2RiMTVlNTRkOTk0NWQ4NDU4MzQxNjEwMzA3Zjc0MDE2OWIwOWMzYTNiNjU4MSIsInNlcW5vIjo4LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQKsh5kpdwQEmytM4JP+mA0/0Itw2UCLK/ViH3mHEd6kuJ4sl9Daf+hlnrKXIhSFvmavDBm51yDBWUuVissFsAwmoc2lnX3R5cGUgo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ericwood
+
+==================================================================
