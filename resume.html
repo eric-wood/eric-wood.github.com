@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eric Wood - Resume</title>
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: Georgia, serif;
+      }
+
+      .content {
+        width: 800px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+      }
+
+      h1, h2 {
+        font-family: Futura, sans-serif;
+        margin: 20px 0;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 0;
+        border-bottom: solid black 1px;
+      }
+
+      header h1 {
+        font-size: 42px;
+      }
+
+      header h3 {
+        font-weight: lighter;
+      }
+
+      .contact {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        list-style-type: none;
+      }
+
+      .contact a {
+        color: black;
+        text-decoration: none;
+      }
+
+      .contact a:hover {
+        text-decoration: underline;
+      }
+
+      .experience h2 {
+        font-size: 16px;
+        font-weight: lighter;
+        margin-bottom: 3px;
+      }
+
+      .company-name {
+        font-weight: bold;
+      }
+
+      .duration {
+        font-size: 14px;
+        margin: 0;
+        font-style: italic;
+      }
+
+      .job-description {
+        margin-top: 10px;
+      }
+
+      .skills ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .skill {
+        display: inline-block;
+        border-right: solid black 2px;
+        width: 150px;
+        padding: 5px 20px 5px 0;
+        margin-right: 20px;
+        font-weight: bold;
+        font-family: Futura, sans-serif;
+        text-align: right;
+      }
+
+      .italic {
+        font-style: italic;
+      }
+
+      .education h2 {
+        font-size: 16px;
+        margin-bottom: 3px;
+      }
+
+      @media (max-width: 850px) {
+        .content {
+          width: auto;
+          padding: 0 20px;
+        }
+
+        header {
+          display: block;
+          text-align: center;
+          padding: 20px 0;
+        }
+
+        .contact {
+          padding: 0;
+        }
+      }
+
+      @media (max-width: 650px) {
+        .skill {
+          display: block;
+          width: auto;
+          text-align: left;
+          border: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <header>
+        <section>
+          <h1>Eric Wood</h1>
+          <h3>Seeking to build helpful web applications</h3>
+        </section>
+        <section>
+          <ul class="contact">
+            <li>✉️&nbsp;&nbsp;&nbsp;<a href="mailto:eric@ericwood.org">eric@ericwood.org</a></li>
+            <li>🖥&nbsp;&nbsp;&nbsp;<a href="http://ericwood.org">ericwood.org</a></li>
+            <li>📞&nbsp;&nbsp;&nbsp;<a href="tel:1-512-569-6150">(512) 569-6150</a></li>
+          </ul>
+        </section>
+      </header>
+
+      <section class="experience" id="experience">
+        <h1>Experience</h1>
+
+        <h2><span class="company-name">Blue Apron</span> - Engineer</h2>
+        <p class="duration">March 2015 - Present</p>
+        <p class="job-description">Revamped registration flow and consumer-facing web experience. Led rewrite of large backbone application to React, built Redux boilerplate application and guidelines for front-end development.</p>
+
+        <h2><span class="company-name">Spiceworks</span> - UI Application Developer</h2>
+        <p class="duration">January 2013 - February 2015</p>
+        <p class="job-description">Development of Spiceworks Community website. Built a blogging system, rich text editor, homepage for curated content.</p>
+
+        <h2><span class="company-name">Spiceworks</span> - Intern</h2>
+        <div class="duration">Dec 2011 - Dec 2012</div>
+        <p class="job-description">Tagging system for venders and products in the Spiceworks Community.</p>
+
+        <h2><span class="company-name">Texas A&amp;M Network Information Security</span> - Student Worker</h2>
+        <div class="duration">Fall 2011 - Spring 2012</div>
+        <p class="job-description">Built official URL shortener for Texas A&amp;M University</p>
+
+        <h2><span class="company-name">Workstreamer Inc.</span> - Intern</h2>
+        <div class="duration">Summer 2010</div>
+        <p class="job-description">Aggregation and processing of large amounts of business data, Rails front-end development
+      </section>
+
+      <section class="skills" id="skills">
+        <h1>Skills</h1>
+        <ul>
+          <li>
+            <span class="skill">Programming</span>
+            Ruby, Javascript, CSS (Sass), BASH, SQL, Python, Java
+          </li>
+          <li>
+            <span class="skill">Frameworks</span>
+            Ruby on Rails, React, Redux, Backbone, Ember
+          </li>
+          <li>
+            <span class="skill">Other tools</span>
+            Webpack, Jest, Git, jQuery, Postgres, elasticsearch, Redis
+          </li>
+        </ul>
+      </section>
+
+      <section class="education" id="education">
+        <h1>Education</h1>
+        <h2>B.S. Computer Engineering</h2>
+        <p class="duration">December 2012</p>
+        <p>Texas A&amp;M University</p>
+      </section>
+
+      <section class="miscellaneous" id="miscellaneous">
+        <h1>Miscellaneous</h1>
+        <ul>
+          <li><span class="italic">Open Source</span> &mdash; contributor to numerous projects, author of Rumba Ruby gem and other utilities</li>
+          <li><span class="italic">Presentations</span> &mdash; talks for local meet-up groups (Web MIDI, synthesis, Roomba hacking, to name a few)</li>
+          <li><span class="italic">Collegiate Cyber Defense Competition</span> &mdash; 2nd place in nationals (2011)</li>
+          <li><span class="italic">President</span> &mdash; Texas A&amp;M ACM chapter</li>
+          <li><span class="italic">Co-founder, President</span> &mdash; Westwood HS Robotics Club</li>
+          <li>Eagle Scout</li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
