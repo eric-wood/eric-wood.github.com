@@ -1,50 +1,85 @@
----
-layout: default
-title: blog
----
+<html>
+  <head>
+    <title>Eric Wood</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://use.fontawesome.com/b7a32401f7.js"></script>
 
-{% for post in paginator.posts %}
-  <div class="post">
-    <a href="{{ post.url }}"><h1 class="post-title">{{ post.title }}</h1></a>
-    <h5 class="post-date">{{ post.date | date: "%B %d, %Y" }}</h5>
-    <div class="post-content">
-      {{ post.content }}
-    </div>
-  </div>
-{% endfor %}
+    <style type="text/css">
+      html, body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
 
-<div class="pagination">
-  <ul>
-    {% if paginator.previous_page %}
-      <li>
-        {% if paginator.previous_page == 1 %}
-          <a href="/">Prev</a>
-        {% else %}
-          <a href="/page{{paginator.previous_page}}">Prev</a>
-        {% endif %}
-      </li>
-    {% else %}
-      <!--<li>Prev</li>-->
-    {% endif %}
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
 
-      {% if paginator.page == 1 %}
-        <li class="current">1</li>
-      {% else %}
-        <li><a href="/">1</a></li>
-      {% endif %}
+      img {
+        border: solid black 3px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
 
-      {% for count in (2..paginator.total_pages) %}
-        {% if count == paginator.page %}
-          <li class="current">{{count}}</li>
-        {% else %}
-          <li><a href="/page{{count}}">{{count}}</a></li>
-        {% endif %}
-      {% endfor %}
+      h1 {
+        font-size: 100px;
+        font-family: Futura, sans-serif;
+        margin: 0;
+        text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
+      }
 
-    {% if paginator.next_page %}
-      <li><a href="/page{{paginator.next_page}}">Next</a></li>
-    {% else %}
-      <!--<li>Next</li>-->
-    {% endif %}
-  </ul>
-</div>
+      ul {
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        margin-top: 30px;
+      }
+
+      a {
+        color: black;
+        transition: color 0.5s;
+      }
+
+      a:hover {
+        color: cornflowerblue;
+      }
+
+      li {
+        margin-left: 20px;
+        text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
+      }
+
+      li:first-child {
+        margin-left: 0;
+      }
+
+      @media (max-width: 550px) {
+        h1 {
+          text-align: center;
+          font-size: 60px;
+        }
+        
+        .fa-3x {
+          font-size: 2em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <img class="me" src="http://gravatar.com/avatar/7bfdbc7b4769c191ee4d09007085ec86?s=150">
+    <h1>Eric Wood</h1>
+
+    <ul>
+      <li><a href="https://twitter.com/eric_b_wood"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a></li>
+      <li><a href="https://github.com/eric-wood"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a></li>
+      <li><a href="https://codepen.io/eric-wood/"><i class="fa fa-codepen fa-3x" aria-hidden="true"></i></a></li>
+      <li><a href="https://soundcloud.com/eric-b-wood"><i class="fa fa-soundcloud fa-3x" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/ericwoodtx/"><i class="fa fa-linkedin fa-3x" aria-hidden="true"></i></a></li>
+    </ul>
+  </body>
+</html>
