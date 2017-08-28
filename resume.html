@@ -57,6 +57,7 @@
         justify-content: center;
         padding: 20px;
         list-style-type: none;
+        margin: 0;
       }
 
       .contact a {
@@ -114,7 +115,7 @@
         margin-bottom: 3px;
       }
 
-      @media (max-width: 850px) {
+      @media only screen and (max-width: 850px) {
         .content {
           width: auto;
           padding: 0 20px;
@@ -131,12 +132,30 @@
         }
       }
 
-      @media (max-width: 650px) {
+      @media only screen and (max-width: 650px) {
         .skill {
           display: block;
           width: auto;
           text-align: left;
           border: none;
+        }
+      }
+
+      @media only print {
+        .content {
+          padding-bottom: 0;
+        }
+
+        header {
+          padding: 0;
+        }
+
+        h1, h2 {
+          margin: 3px 0;
+        }
+
+        .contact {
+          padding: 0;
         }
       }
     </style>
