@@ -16,81 +16,193 @@
     </script>
 
     <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+
       html, body {
-        height: 100%;
-        padding: 0;
         margin: 0;
+        padding: 0;
+        height: 100%;
       }
 
       body {
         display: flex;
         align-items: center;
-        justify-content: center;
+        background-color: #eddebc;
         flex-direction: column;
       }
 
-      img {
-        border: solid black 3px;
-        border-radius: 50%;
-        margin-bottom: 20px;
-      }
-
-      h1 {
-        font-size: 100px;
-        font-family: Futura, sans-serif;
+      h1, h2 {
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 400;
         margin: 0;
-        text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
       }
 
       ul {
         list-style-type: none;
-        display: flex;
-        margin: 0;
         padding: 0;
-        margin-top: 30px;
+        margin: 5px 0;
+        line-height: 1.3;
       }
 
       a {
-        color: black;
-        transition: color 0.5s;
+        text-decoration: none;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 500;
       }
-
       a:hover {
-        color: cornflowerblue;
+        text-decoration: underline;
       }
 
-      li {
+      header {
+        background-color: #69a3b6;
+        width: 100%;
+        max-width: 800px;
+        padding: 20px 0 10px 0;
+        margin-bottom: 50px;
+      }
+      header img {
+        position: absolute;
+        width: 60px;
+        border-radius: 50%;
+        -webkit-filter: grayscale(1);
+                filter: grayscale(1);
         margin-left: 20px;
-        text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
+      }
+      header .nudge {
+        padding-left: 30%;
+      }
+      header h1 {
+        font-size: 64px;
+        color: #eddebc;
+        text-transform: uppercase;
+        margin-left: -4px;
+      }
+      header h2 {
+        margin-bottom: 70px;
+        line-height: 60px;
+      }
+      header ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      header ul li {
+        margin-right: 15px;
+      }
+      header a {
+        color: black;
+        font-size: 24px;
       }
 
-      li:first-child {
-        margin-left: 0;
+      @-webkit-keyframes wobble {
+        to {
+          -webkit-transform: translateY(3vh);
+                  transform: translateY(3vh);
+        }
       }
 
-      @media (max-width: 550px) {
-        h1 {
+      @keyframes wobble {
+        to {
+          -webkit-transform: translateY(3vh);
+                  transform: translateY(3vh);
+        }
+      }
+      .circle {
+        position: relative;
+        width: 60vw;
+        max-width: 400px;
+        height: 60vw;
+        max-height: 400px;
+        border-radius: 50%;
+        margin-top: -37.5vw;
+        mix-blend-mode: multiply;
+      }
+
+      .circles .circle:first-child {
+        margin-top: 0;
+      }
+
+      .blue {
+        background-color: rgba(105, 163, 182, 0.75);
+        z-index: 3;
+      }
+
+      .green {
+        background-color: rgba(121, 163, 120, 0.75);
+        z-index: 2;
+        -webkit-animation: 3s wobble infinite linear alternate;
+                animation: 3s wobble infinite linear alternate;
+        -webkit-transform: translateY(-3vh);
+                transform: translateY(-3vh);
+      }
+
+      .yellow {
+        background-color: rgba(248, 235, 79, 0.75);
+        z-index: 1;
+      }
+
+      @media (min-width: 800px) {
+        .circle {
+          margin-top: -300px;
+        }
+      }
+      @media (max-width: 800px) {
+        header {
+          padding-left: 30px;
+          padding-right: 30px;
           text-align: center;
-          font-size: 60px;
         }
-        
-        .fa-3x {
-          font-size: 2em;
+        header img {
+          position: relative;
+          margin: 20px;
+        }
+        header .nudge {
+          padding-left: 0;
+        }
+        header h2 {
+          margin-bottom: 30px;
+          line-height: 1.3;
+        }
+        header ul {
+          justify-content: center;
         }
       }
-    </style>
-  </head>
+      @media (max-width: 435px) {
+        header h2 {
+          display: none;
+        }
+        header h1 {
+          font-size: 36px;
+          margin-bottom: 20px;
+        }
+        header a {
+          font-size: 22px;
+        }
+      }
+      </style>
+    </head>
 
-  <body>
-    <img class="me" src="http://gravatar.com/avatar/7bfdbc7b4769c191ee4d09007085ec86?s=150">
-    <h1>Eric Wood</h1>
+    <body>
+      <header>
+        <img src="http://gravatar.com/avatar/7bfdbc7b4769c191ee4d09007085ec86?s=150">
+        <div class="nudge">
+          <h2>a Creator of Sound Waves and Websites</h2>
+          <h1>Eric Wood</h1>
+          <ul>
+            <li><a href="https://soundcloud.com/eric-b-wood">SoundCloud</a></li>
+            <li><a href="https://twitter.com/eric_b_wood">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/in/ericwoodtx/">LinkedIn</a></li>
+            <li><a href="https://github.com/eric-wood">Github</a></li>
+            <li><a href="https://codepen.io/eric-wood/">Codepen</a></li>
+          </ul>
+        </div>
+      </header>
 
-    <ul>
-      <li><a href="https://twitter.com/eric_b_wood"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a></li>
-      <li><a href="https://github.com/eric-wood"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a></li>
-      <li><a href="https://codepen.io/eric-wood/"><i class="fa fa-codepen fa-3x" aria-hidden="true"></i></a></li>
-      <li><a href="https://soundcloud.com/eric-b-wood"><i class="fa fa-soundcloud fa-3x" aria-hidden="true"></i></a></li>
-      <li><a href="https://www.linkedin.com/in/ericwoodtx/"><i class="fa fa-linkedin fa-3x" aria-hidden="true"></i></a></li>
-    </ul>
+    <section class="circles">
+      <div class="circle blue"></div>
+      <div class="circle green"></div>
+      <div class="circle yellow"></div>
+    </section>
   </body>
 </html>
